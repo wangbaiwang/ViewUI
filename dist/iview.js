@@ -680,7 +680,7 @@ exports.default = {
 /* 5 */
 /***/ (function(module, exports) {
 
-var core = module.exports = { version: '2.6.9' };
+var core = module.exports = { version: '2.6.12' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -2681,7 +2681,7 @@ var store = global[SHARED] || (global[SHARED] = {});
 })('versions', []).push({
   version: core.version,
   mode: __webpack_require__(42) ? 'pure' : 'global',
-  copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
+  copyright: '© 2020 Denis Pushkarev (zloirock.ru)'
 });
 
 
@@ -2832,8 +2832,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_select_vue__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_select_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_select_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_select_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_select_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_20c68a7a_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_select_vue__ = __webpack_require__(327);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_20c68a7a_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_select_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_20c68a7a_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_select_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_29d285ce_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_select_vue__ = __webpack_require__(327);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_29d285ce_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_select_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_29d285ce_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_select_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(0);
 /* script */
 
@@ -2851,8 +2851,8 @@ var __vue_module_identifier__ = null
 
 var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_select_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_20c68a7a_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_select_vue__["render"],
-  __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_20c68a7a_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_select_vue__["staticRenderFns"],
+  __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_29d285ce_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_select_vue__["render"],
+  __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_29d285ce_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_select_vue__["staticRenderFns"],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -5925,6 +5925,12 @@ exports.default = {
                     return this.onOptionClick(option);
                 }.bind(this));
             }
+        },
+        focus: function focus() {
+            if (this.filterable) {
+                this.$refs.selectHead.$refs.input.focus();
+                this.toggleMenu();
+            }
         }
     },
     watch: {
@@ -6299,7 +6305,7 @@ var Popper = isServer ? function () {} : __webpack_require__(116);exports.defaul
 
 /* WEBPACK VAR INJECTION */(function(global) {/**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.15.0
+ * @version 1.16.1
  * @license
  * Copyright (c) 2016 Federico Zivolo and contributors
  *
@@ -6327,16 +6333,17 @@ var Popper = isServer ? function () {} : __webpack_require__(116);exports.defaul
 	(global.Popper = factory());
 }(this, (function () { 'use strict';
 
-var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined';
+var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined' && typeof navigator !== 'undefined';
 
-var longerTimeoutBrowsers = ['Edge', 'Trident', 'Firefox'];
-var timeoutDuration = 0;
-for (var i = 0; i < longerTimeoutBrowsers.length; i += 1) {
-  if (isBrowser && navigator.userAgent.indexOf(longerTimeoutBrowsers[i]) >= 0) {
-    timeoutDuration = 1;
-    break;
+var timeoutDuration = function () {
+  var longerTimeoutBrowsers = ['Edge', 'Trident', 'Firefox'];
+  for (var i = 0; i < longerTimeoutBrowsers.length; i += 1) {
+    if (isBrowser && navigator.userAgent.indexOf(longerTimeoutBrowsers[i]) >= 0) {
+      return 1;
+    }
   }
-}
+  return 0;
+}();
 
 function microtaskDebounce(fn) {
   var called = false;
@@ -6454,6 +6461,17 @@ function getScrollParent(element) {
   }
 
   return getScrollParent(getParentNode(element));
+}
+
+/**
+ * Returns the reference node of the reference object, or the reference object itself.
+ * @method
+ * @memberof Popper.Utils
+ * @param {Element|Object} reference - the reference element (the popper will be relative to this)
+ * @returns {Element} parent
+ */
+function getReferenceNode(reference) {
+  return reference && reference.referenceNode ? reference.referenceNode : reference;
 }
 
 var isIE11 = isBrowser && !!(window.MSInputMethodContext && document.documentMode);
@@ -6639,7 +6657,7 @@ function getBordersSize(styles, axis) {
   var sideA = axis === 'x' ? 'Left' : 'Top';
   var sideB = sideA === 'Left' ? 'Right' : 'Bottom';
 
-  return parseFloat(styles['border' + sideA + 'Width'], 10) + parseFloat(styles['border' + sideB + 'Width'], 10);
+  return parseFloat(styles['border' + sideA + 'Width']) + parseFloat(styles['border' + sideB + 'Width']);
 }
 
 function getSize(axis, body, html, computedStyle) {
@@ -6764,8 +6782,8 @@ function getBoundingClientRect(element) {
 
   // subtract scrollbar size from sizes
   var sizes = element.nodeName === 'HTML' ? getWindowSizes(element.ownerDocument) : {};
-  var width = sizes.width || element.clientWidth || result.right - result.left;
-  var height = sizes.height || element.clientHeight || result.bottom - result.top;
+  var width = sizes.width || element.clientWidth || result.width;
+  var height = sizes.height || element.clientHeight || result.height;
 
   var horizScrollbar = element.offsetWidth - width;
   var vertScrollbar = element.offsetHeight - height;
@@ -6794,8 +6812,8 @@ function getOffsetRectRelativeToArbitraryNode(children, parent) {
   var scrollParent = getScrollParent(children);
 
   var styles = getStyleComputedProperty(parent);
-  var borderTopWidth = parseFloat(styles.borderTopWidth, 10);
-  var borderLeftWidth = parseFloat(styles.borderLeftWidth, 10);
+  var borderTopWidth = parseFloat(styles.borderTopWidth);
+  var borderLeftWidth = parseFloat(styles.borderLeftWidth);
 
   // In cases where the parent is fixed, we must ignore negative scroll in offset calc
   if (fixedPosition && isHTML) {
@@ -6816,8 +6834,8 @@ function getOffsetRectRelativeToArbitraryNode(children, parent) {
   // differently when margins are applied to it. The margins are included in
   // the box of the documentElement, in the other cases not.
   if (!isIE10 && isHTML) {
-    var marginTop = parseFloat(styles.marginTop, 10);
-    var marginLeft = parseFloat(styles.marginLeft, 10);
+    var marginTop = parseFloat(styles.marginTop);
+    var marginLeft = parseFloat(styles.marginLeft);
 
     offsets.top -= borderTopWidth - marginTop;
     offsets.bottom -= borderTopWidth - marginTop;
@@ -6917,7 +6935,7 @@ function getBoundaries(popper, reference, padding, boundariesElement) {
   // NOTE: 1 DOM access here
 
   var boundaries = { top: 0, left: 0 };
-  var offsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, reference);
+  var offsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, getReferenceNode(reference));
 
   // Handle viewport case
   if (boundariesElement === 'viewport') {
@@ -7045,7 +7063,7 @@ function computeAutoPlacement(placement, refRect, popper, reference, boundariesE
 function getReferenceOffsets(state, popper, reference) {
   var fixedPosition = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
 
-  var commonOffsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, reference);
+  var commonOffsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, getReferenceNode(reference));
   return getOffsetRectRelativeToArbitraryNode(reference, commonOffsetParent, fixedPosition);
 }
 
@@ -7307,7 +7325,7 @@ function destroy() {
 
   this.disableEventListeners();
 
-  // remove the popper if user explicity asked for the deletion on destroy
+  // remove the popper if user explicitly asked for the deletion on destroy
   // do not use `remove` because IE11 doesn't support it
   if (this.options.removeOnDestroy) {
     this.popper.parentNode.removeChild(this.popper);
@@ -7756,8 +7774,8 @@ function arrow(data, options) {
   // Compute the sideValue using the updated popper offsets
   // take popper margin in account because we don't have this info available
   var css = getStyleComputedProperty(data.instance.popper);
-  var popperMarginSide = parseFloat(css['margin' + sideCapitalized], 10);
-  var popperBorderSide = parseFloat(css['border' + sideCapitalized + 'Width'], 10);
+  var popperMarginSide = parseFloat(css['margin' + sideCapitalized]);
+  var popperBorderSide = parseFloat(css['border' + sideCapitalized + 'Width']);
   var sideValue = center - data.offsets.popper[side] - popperMarginSide - popperBorderSide;
 
   // prevent arrowElement from being placed not contiguously to its popper
@@ -13025,7 +13043,7 @@ exports.default = {
 /* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_RESULT__;// TinyColor v1.4.1
+var __WEBPACK_AMD_DEFINE_RESULT__;// TinyColor v1.4.2
 // https://github.com/bgrins/TinyColor
 // Brian Grinstead, MIT License
 
@@ -30884,7 +30902,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 var API = (0, _extends3.default)({
-    version: '4.7.0',
+    version: '1.0.0',
     locale: _index2.default.use,
     i18n: _index2.default.i18n,
     install: install,
@@ -31329,7 +31347,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('transition', { attrs: { "name": _vm.fade ? 'fade' : '' } }, [!_vm.closed ? _c('div', { class: _vm.wrapClasses }, [_vm.showIcon ? _c('span', { class: _vm.iconClasses }, [_vm._t("icon", [_c('Icon', { attrs: { "type": _vm.iconType } })])], 2) : _vm._e(), _vm._v(" "), _c('span', { class: _vm.messageClasses }, [_vm._t("default")], 2), _vm._v(" "), _c('span', { class: _vm.descClasses }, [_vm._t("desc")], 2), _vm._v(" "), _vm.closable ? _c('a', { class: _vm.closeClasses, on: { "click": _vm.close } }, [_vm._t("close", [_c('Icon', { attrs: { "type": "ios-close" } })])], 2) : _vm._e()]) : _vm._e()]);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('transition', { attrs: { "name": _vm.fade ? 'fade' : '' } }, [!_vm.closed ? _c('div', { class: _vm.wrapClasses }, [_vm.showIcon ? _c('span', { class: _vm.iconClasses }, [_vm._t("icon", function () {
+    return [_c('Icon', { attrs: { "type": _vm.iconType } })];
+  })], 2) : _vm._e(), _vm._v(" "), _c('span', { class: _vm.messageClasses }, [_vm._t("default")], 2), _vm._v(" "), _c('span', { class: _vm.descClasses }, [_vm._t("desc")], 2), _vm._v(" "), _vm.closable ? _c('a', { class: _vm.closeClasses, on: { "click": _vm.close } }, [_vm._t("close", function () {
+    return [_c('Icon', { attrs: { "type": "ios-close" } })];
+  })], 2) : _vm._e()]) : _vm._e()]);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -31480,7 +31502,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.anchorLinkClasses }, [_c('a', { class: _vm.linkTitleClasses, attrs: { "href": _vm.href, "data-scroll-offset": _vm.scrollOffset, "data-href": _vm.href, "title": _vm.title }, on: { "click": function click($event) {
-        $event.preventDefault();return _vm.goAnchor($event);
+        $event.preventDefault();return _vm.goAnchor.apply(null, arguments);
       } } }, [_vm._v(_vm._s(_vm.title))]), _vm._v(" "), _vm._t("default")], 2);
 };
 var staticRenderFns = [];
@@ -32517,24 +32539,26 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.headCls, on: { "click": _vm.onHeaderClick } }, [_vm.$slots.prefix || _vm.prefix ? _c('span', { class: [_vm.prefixCls + '-prefix'] }, [_vm._t("prefix", [_vm.prefix ? _c('Icon', { attrs: { "type": _vm.prefix } }) : _vm._e()])], 2) : _vm._e(), _vm._v(" "), _vm._l(_vm.selectedMultiple, function (item, index) {
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.headCls, on: { "click": _vm.onHeaderClick } }, [_vm.$slots.prefix || _vm.prefix ? _c('span', { class: [_vm.prefixCls + '-prefix'] }, [_vm._t("prefix", function () {
+    return [_vm.prefix ? _c('Icon', { attrs: { "type": _vm.prefix } }) : _vm._e()];
+  })], 2) : _vm._e(), _vm._v(" "), _vm._l(_vm.selectedMultiple, function (item, index) {
     return _vm.maxTagCount === undefined || index < _vm.maxTagCount ? _c('div', { staticClass: "ivu-tag ivu-tag-checked" }, [_c('span', { staticClass: "ivu-tag-text", class: { 'ivu-select-multiple-tag-hidden': item.disabled } }, [_vm._v(_vm._s(item.tag !== undefined ? item.tag : item.label))]), _vm._v(" "), !item.disabled ? _c('Icon', { attrs: { "type": "ios-close" }, nativeOn: { "click": function click($event) {
           $event.stopPropagation();return _vm.removeTag(item);
         } } }) : _vm._e()], 1) : _vm._e();
   }), _vm.maxTagCount !== undefined && _vm.selectedMultiple.length > _vm.maxTagCount ? _c('div', { staticClass: "ivu-tag ivu-tag-checked" }, [_c('span', { staticClass: "ivu-tag-text ivu-select-max-tag" }, [_vm.maxTagPlaceholder ? [_vm._v(_vm._s(_vm.maxTagPlaceholder(_vm.selectedMultiple.length - _vm.maxTagCount)))] : [_vm._v("+ " + _vm._s(_vm.selectedMultiple.length - _vm.maxTagCount) + "...")]], 2)]) : _vm._e(), _vm._v(" "), _c('span', { directives: [{ name: "show", rawName: "v-show", value: _vm.singleDisplayValue, expression: "singleDisplayValue" }], class: _vm.singleDisplayClasses }, [_vm._v(_vm._s(_vm.singleDisplayValue))]), _vm._v(" "), _vm.filterable ? _c('input', { directives: [{ name: "model", rawName: "v-model", value: _vm.query, expression: "query" }], ref: "input", class: [_vm.prefixCls + '-input'], style: _vm.inputStyle, attrs: { "id": _vm.inputElementId, "type": "text", "disabled": _vm.disabled, "placeholder": _vm.showPlaceholder ? _vm.localePlaceholder : '', "autocomplete": "off", "spellcheck": "false" }, domProps: { "value": _vm.query }, on: { "keydown": [_vm.resetInputState, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "delete", [8, 46], $event.key, ["Backspace", "Delete", "Del"])) {
           return null;
-        }return _vm.handleInputDelete($event);
+        }return _vm.handleInputDelete.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) {
           return null;
-        }return _vm.handleInputEnter($event);
+        }return _vm.handleInputEnter.apply(null, arguments);
       }], "focus": _vm.onInputFocus, "blur": _vm.onInputBlur, "input": function input($event) {
         if ($event.target.composing) {
           return;
         }_vm.query = $event.target.value;
       } } }) : _vm._e(), _vm._v(" "), _vm.resetSelect ? _c('Icon', { class: [_vm.prefixCls + '-arrow'], attrs: { "type": "ios-close-circle" }, nativeOn: { "click": function click($event) {
-        $event.stopPropagation();return _vm.onClear($event);
+        $event.stopPropagation();return _vm.onClear.apply(null, arguments);
       } } }) : _vm._e(), _vm._v(" "), !_vm.resetSelect && !_vm.remote ? _c('Icon', { class: [_vm.prefixCls + '-arrow'], attrs: { "type": _vm.arrowType, "custom": _vm.customArrowType, "size": _vm.arrowSize } }) : _vm._e()], 2);
 };
 var staticRenderFns = [];
@@ -32592,36 +32616,38 @@ var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { directives: [{ name: "click-outside", rawName: "v-click-outside:[capture]", value: _vm.onClickOutside, expression: "onClickOutside", arg: _vm.capture }, { name: "click-outside", rawName: "v-click-outside:[capture].mousedown", value: _vm.onClickOutside, expression: "onClickOutside", arg: _vm.capture, modifiers: { "mousedown": true } }, { name: "click-outside", rawName: "v-click-outside:[capture].touchstart", value: _vm.onClickOutside, expression: "onClickOutside", arg: _vm.capture, modifiers: { "touchstart": true } }], class: _vm.classes }, [_c('div', { ref: "reference", class: _vm.selectionCls, attrs: { "tabindex": _vm.selectTabindex }, on: { "blur": _vm.toggleHeaderFocus, "focus": _vm.toggleHeaderFocus, "click": _vm.toggleMenu, "keydown": [function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "esc", 27, $event.key, ["Esc", "Escape"])) {
           return null;
-        }return _vm.handleKeydown($event);
+        }return _vm.handleKeydown.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) {
           return null;
-        }return _vm.handleKeydown($event);
+        }return _vm.handleKeydown.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "up", 38, $event.key, ["Up", "ArrowUp"])) {
           return null;
-        }$event.preventDefault();return _vm.handleKeydown($event);
+        }$event.preventDefault();return _vm.handleKeydown.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "down", 40, $event.key, ["Down", "ArrowDown"])) {
           return null;
-        }$event.preventDefault();return _vm.handleKeydown($event);
+        }$event.preventDefault();return _vm.handleKeydown.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "tab", 9, $event.key, "Tab")) {
           return null;
-        }return _vm.handleKeydown($event);
+        }return _vm.handleKeydown.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "delete", [8, 46], $event.key, ["Backspace", "Delete", "Del"])) {
           return null;
-        }return _vm.handleKeydown($event);
+        }return _vm.handleKeydown.apply(null, arguments);
       }], "mouseenter": function mouseenter($event) {
         _vm.hasMouseHoverHead = true;
       }, "mouseleave": function mouseleave($event) {
         _vm.hasMouseHoverHead = false;
-      } } }, [_vm._t("input", [_c('input', { attrs: { "type": "hidden", "name": _vm.name }, domProps: { "value": _vm.publicValue } }), _vm._v(" "), _c('select-head', { attrs: { "filterable": _vm.filterable, "multiple": _vm.multiple, "values": _vm.values, "clearable": _vm.canBeCleared, "prefix": _vm.prefix, "disabled": _vm.itemDisabled, "remote": _vm.remote, "input-element-id": _vm.elementId, "initial-label": _vm.initialLabel, "placeholder": _vm.placeholder, "query-prop": _vm.query, "max-tag-count": _vm.maxTagCount, "max-tag-placeholder": _vm.maxTagPlaceholder, "allow-create": _vm.allowCreate, "show-create-item": _vm.showCreateItem }, on: { "on-query-change": _vm.onQueryChange, "on-input-focus": function onInputFocus($event) {
-        _vm.isFocused = true;
-      }, "on-input-blur": function onInputBlur($event) {
-        _vm.isFocused = false;
-      }, "on-clear": _vm.clearSingleSelect, "on-enter": _vm.handleCreateItem } }, [_vm._t("prefix", null, { "slot": "prefix" })], 2)])], 2), _vm._v(" "), _c('transition', { attrs: { "name": "transition-drop" } }, [_c('Drop', { directives: [{ name: "show", rawName: "v-show", value: _vm.dropVisible, expression: "dropVisible" }, { name: "transfer-dom", rawName: "v-transfer-dom" }], ref: "dropdown", class: _vm.dropdownCls, attrs: { "placement": _vm.placement, "data-transfer": _vm.transfer, "transfer": _vm.transfer, "eventsEnabled": _vm.eventsEnabled } }, [_c('ul', { directives: [{ name: "show", rawName: "v-show", value: _vm.showNotFoundLabel && !_vm.allowCreate, expression: "showNotFoundLabel && !allowCreate" }], class: [_vm.prefixCls + '-not-found'] }, [_c('li', [_vm._v(_vm._s(_vm.localeNotFoundText))])]), _vm._v(" "), !_vm.remote || _vm.remote && !_vm.loading ? _c('functional-options', { class: _vm.prefixCls + '-dropdown-list', attrs: { "options": _vm.selectOptions, "slot-update-hook": _vm.updateSlotOptions, "slot-options": _vm.slotOptions } }, [_vm.showCreateItem ? _c('li', { class: _vm.prefixCls + '-item', on: { "click": _vm.handleCreateItem } }, [_vm._v("\n                    " + _vm._s(_vm.query) + "\n                    "), _c('Icon', { class: _vm.prefixCls + '-item-enter', attrs: { "type": "md-return-left" } })], 1) : _vm._e()]) : _c('ul', { class: _vm.prefixCls + '-dropdown-list' }, [_vm.showCreateItem ? _c('li', { class: _vm.prefixCls + '-item', on: { "click": _vm.handleCreateItem } }, [_vm._v("\n                    " + _vm._s(_vm.query) + "\n                    "), _c('Icon', { class: _vm.prefixCls + '-item-enter', attrs: { "type": "md-return-left" } })], 1) : _vm._e()]), _vm._v(" "), _c('ul', { directives: [{ name: "show", rawName: "v-show", value: _vm.loading, expression: "loading" }], class: [_vm.prefixCls + '-loading'] }, [_vm._v(_vm._s(_vm.localeLoadingText))])], 1)], 1)], 1);
+      } } }, [_vm._t("input", function () {
+    return [_c('input', { attrs: { "type": "hidden", "name": _vm.name }, domProps: { "value": _vm.publicValue } }), _vm._v(" "), _c('select-head', { ref: "selectHead", attrs: { "filterable": _vm.filterable, "multiple": _vm.multiple, "values": _vm.values, "clearable": _vm.canBeCleared, "prefix": _vm.prefix, "disabled": _vm.itemDisabled, "remote": _vm.remote, "input-element-id": _vm.elementId, "initial-label": _vm.initialLabel, "placeholder": _vm.placeholder, "query-prop": _vm.query, "max-tag-count": _vm.maxTagCount, "max-tag-placeholder": _vm.maxTagPlaceholder, "allow-create": _vm.allowCreate, "show-create-item": _vm.showCreateItem }, on: { "on-query-change": _vm.onQueryChange, "on-input-focus": function onInputFocus($event) {
+          _vm.isFocused = true;
+        }, "on-input-blur": function onInputBlur($event) {
+          _vm.isFocused = false;
+        }, "on-clear": _vm.clearSingleSelect, "on-enter": _vm.handleCreateItem } }, [_vm._t("prefix", null, { "slot": "prefix" })], 2)];
+  })], 2), _vm._v(" "), _c('transition', { attrs: { "name": "transition-drop" } }, [_c('Drop', { directives: [{ name: "show", rawName: "v-show", value: _vm.dropVisible, expression: "dropVisible" }, { name: "transfer-dom", rawName: "v-transfer-dom" }], ref: "dropdown", class: _vm.dropdownCls, attrs: { "placement": _vm.placement, "data-transfer": _vm.transfer, "transfer": _vm.transfer, "eventsEnabled": _vm.eventsEnabled } }, [_c('ul', { directives: [{ name: "show", rawName: "v-show", value: _vm.showNotFoundLabel && !_vm.allowCreate, expression: "showNotFoundLabel && !allowCreate" }], class: [_vm.prefixCls + '-not-found'] }, [_c('li', [_vm._v(_vm._s(_vm.localeNotFoundText))])]), _vm._v(" "), !_vm.remote || _vm.remote && !_vm.loading ? _c('functional-options', { class: _vm.prefixCls + '-dropdown-list', attrs: { "options": _vm.selectOptions, "slot-update-hook": _vm.updateSlotOptions, "slot-options": _vm.slotOptions } }, [_vm.showCreateItem ? _c('li', { class: _vm.prefixCls + '-item', on: { "click": _vm.handleCreateItem } }, [_vm._v("\n                    " + _vm._s(_vm.query) + "\n                    "), _c('Icon', { class: _vm.prefixCls + '-item-enter', attrs: { "type": "md-return-left" } })], 1) : _vm._e()]) : _c('ul', { class: _vm.prefixCls + '-dropdown-list' }, [_vm.showCreateItem ? _c('li', { class: _vm.prefixCls + '-item', on: { "click": _vm.handleCreateItem } }, [_vm._v("\n                    " + _vm._s(_vm.query) + "\n                    "), _c('Icon', { class: _vm.prefixCls + '-item-enter', attrs: { "type": "md-return-left" } })], 1) : _vm._e()]), _vm._v(" "), _c('ul', { directives: [{ name: "show", rawName: "v-show", value: _vm.loading, expression: "loading" }], class: [_vm.prefixCls + '-loading'] }, [_vm._v(_vm._s(_vm.localeLoadingText))])], 1)], 1)], 1);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -32639,10 +32665,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('li', { class: _vm.classes, on: { "click": function click($event) {
-        $event.stopPropagation();return _vm.select($event);
+        $event.stopPropagation();return _vm.select.apply(null, arguments);
       }, "mousedown": function mousedown($event) {
         $event.preventDefault();
-      } } }, [_vm._t("default", [_vm._v(_vm._s(_vm.showLabel))])], 2);
+      } } }, [_vm._t("default", function () {
+    return [_vm._v(_vm._s(_vm.showLabel))];
+  })], 2);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -32876,14 +32904,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.wrapClasses }, [_vm.type !== 'textarea' ? [_vm.prepend ? _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.slotReady, expression: "slotReady" }], class: [_vm.prefixCls + '-group-prepend'] }, [_vm._t("prepend")], 2) : _vm._e(), _vm._v(" "), _vm.clearable && _vm.currentValue && !_vm.itemDisabled ? _c('i', { staticClass: "ivu-icon", class: ['ivu-icon-ios-close-circle', _vm.prefixCls + '-icon', _vm.prefixCls + '-icon-clear', _vm.prefixCls + '-icon-normal'], style: _vm.clearableStyles, on: { "click": _vm.handleClear } }) : _vm.icon ? _c('i', { staticClass: "ivu-icon", class: ['ivu-icon-' + _vm.icon, _vm.prefixCls + '-icon', _vm.prefixCls + '-icon-normal'], on: { "click": _vm.handleIconClick } }) : _vm.search && _vm.enterButton === false ? _c('i', { staticClass: "ivu-icon ivu-icon-ios-search", class: [_vm.prefixCls + '-icon', _vm.prefixCls + '-icon-normal', _vm.prefixCls + '-search-icon'], on: { "click": _vm.handleSearch } }) : _vm.showSuffix ? _c('span', { staticClass: "ivu-input-suffix" }, [_vm._t("suffix", [_vm.suffix ? _c('i', { staticClass: "ivu-icon", class: ['ivu-icon-' + _vm.suffix] }) : _vm._e()])], 2) : _vm.showWordLimit ? _c('span', { staticClass: "ivu-input-word-count" }, [_vm._v(_vm._s(_vm.textLength) + "/" + _vm._s(_vm.upperLimit))]) : _vm.password ? _c('span', { staticClass: "ivu-input-suffix", on: { "click": _vm.handleToggleShowPassword } }, [_vm.showPassword ? _c('i', { staticClass: "ivu-icon ivu-icon-ios-eye-outline" }) : _c('i', { staticClass: "ivu-icon ivu-icon-ios-eye-off-outline" })]) : _vm._e(), _vm._v(" "), _c('transition', { attrs: { "name": "fade" } }, [!_vm.icon ? _c('i', { staticClass: "ivu-icon ivu-icon-ios-loading ivu-load-loop", class: [_vm.prefixCls + '-icon', _vm.prefixCls + '-icon-validate'] }) : _vm._e()]), _vm._v(" "), _c('input', { ref: "input", class: _vm.inputClasses, attrs: { "id": _vm.elementId, "autocomplete": _vm.autocomplete, "spellcheck": _vm.spellcheck, "type": _vm.currentType, "placeholder": _vm.placeholder, "disabled": _vm.itemDisabled, "maxlength": _vm.maxlength, "readonly": _vm.readonly, "name": _vm.name, "number": _vm.number, "autofocus": _vm.autofocus }, domProps: { "value": _vm.currentValue }, on: { "keyup": [function ($event) {
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.wrapClasses }, [_vm.type !== 'textarea' ? [_vm.prepend ? _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.slotReady, expression: "slotReady" }], class: [_vm.prefixCls + '-group-prepend'] }, [_vm._t("prepend")], 2) : _vm._e(), _vm._v(" "), _vm.clearable && _vm.currentValue && !_vm.itemDisabled ? _c('i', { staticClass: "ivu-icon", class: ['ivu-icon-ios-close-circle', _vm.prefixCls + '-icon', _vm.prefixCls + '-icon-clear', _vm.prefixCls + '-icon-normal'], style: _vm.clearableStyles, on: { "click": _vm.handleClear } }) : _vm.icon ? _c('i', { staticClass: "ivu-icon", class: ['ivu-icon-' + _vm.icon, _vm.prefixCls + '-icon', _vm.prefixCls + '-icon-normal'], on: { "click": _vm.handleIconClick } }) : _vm.search && _vm.enterButton === false ? _c('i', { staticClass: "ivu-icon ivu-icon-ios-search", class: [_vm.prefixCls + '-icon', _vm.prefixCls + '-icon-normal', _vm.prefixCls + '-search-icon'], on: { "click": _vm.handleSearch } }) : _vm.showSuffix ? _c('span', { staticClass: "ivu-input-suffix" }, [_vm._t("suffix", function () {
+    return [_vm.suffix ? _c('i', { staticClass: "ivu-icon", class: ['ivu-icon-' + _vm.suffix] }) : _vm._e()];
+  })], 2) : _vm.showWordLimit ? _c('span', { staticClass: "ivu-input-word-count" }, [_vm._v(_vm._s(_vm.textLength) + "/" + _vm._s(_vm.upperLimit))]) : _vm.password ? _c('span', { staticClass: "ivu-input-suffix", on: { "click": _vm.handleToggleShowPassword } }, [_vm.showPassword ? _c('i', { staticClass: "ivu-icon ivu-icon-ios-eye-outline" }) : _c('i', { staticClass: "ivu-icon ivu-icon-ios-eye-off-outline" })]) : _vm._e(), _vm._v(" "), _c('transition', { attrs: { "name": "fade" } }, [!_vm.icon ? _c('i', { staticClass: "ivu-icon ivu-icon-ios-loading ivu-load-loop", class: [_vm.prefixCls + '-icon', _vm.prefixCls + '-icon-validate'] }) : _vm._e()]), _vm._v(" "), _c('input', { ref: "input", class: _vm.inputClasses, attrs: { "id": _vm.elementId, "autocomplete": _vm.autocomplete, "spellcheck": _vm.spellcheck, "type": _vm.currentType, "placeholder": _vm.placeholder, "disabled": _vm.itemDisabled, "maxlength": _vm.maxlength, "readonly": _vm.readonly, "name": _vm.name, "number": _vm.number, "autofocus": _vm.autofocus }, domProps: { "value": _vm.currentValue }, on: { "keyup": [function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) {
           return null;
-        }return _vm.handleEnter($event);
-      }, _vm.handleKeyup], "keypress": _vm.handleKeypress, "keydown": _vm.handleKeydown, "focus": _vm.handleFocus, "blur": _vm.handleBlur, "compositionstart": _vm.handleComposition, "compositionupdate": _vm.handleComposition, "compositionend": _vm.handleComposition, "input": _vm.handleInput, "change": _vm.handleChange } }), _vm._v(" "), _vm.append ? _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.slotReady, expression: "slotReady" }], class: [_vm.prefixCls + '-group-append'] }, [_vm._t("append")], 2) : _vm.search && _vm.enterButton ? _c('div', { class: [_vm.prefixCls + '-group-append', _vm.prefixCls + '-search'], on: { "click": _vm.handleSearch } }, [_vm.enterButton === true ? _c('i', { staticClass: "ivu-icon ivu-icon-ios-search" }) : [_vm._v(_vm._s(_vm.enterButton))]], 2) : _vm.showPrefix ? _c('span', { staticClass: "ivu-input-prefix" }, [_vm._t("prefix", [_vm.prefix ? _c('i', { staticClass: "ivu-icon", class: ['ivu-icon-' + _vm.prefix] }) : _vm._e()])], 2) : _vm._e()] : [_c('textarea', { ref: "textarea", class: _vm.textareaClasses, style: _vm.textareaStyles, attrs: { "id": _vm.elementId, "wrap": _vm.wrap, "autocomplete": _vm.autocomplete, "spellcheck": _vm.spellcheck, "placeholder": _vm.placeholder, "disabled": _vm.itemDisabled, "rows": _vm.rows, "maxlength": _vm.maxlength, "readonly": _vm.readonly, "name": _vm.name, "autofocus": _vm.autofocus }, domProps: { "value": _vm.currentValue }, on: { "keyup": [function ($event) {
+        }return _vm.handleEnter.apply(null, arguments);
+      }, _vm.handleKeyup], "keypress": _vm.handleKeypress, "keydown": _vm.handleKeydown, "focus": _vm.handleFocus, "blur": _vm.handleBlur, "compositionstart": _vm.handleComposition, "compositionupdate": _vm.handleComposition, "compositionend": _vm.handleComposition, "input": _vm.handleInput, "change": _vm.handleChange } }), _vm._v(" "), _vm.append ? _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.slotReady, expression: "slotReady" }], class: [_vm.prefixCls + '-group-append'] }, [_vm._t("append")], 2) : _vm.search && _vm.enterButton ? _c('div', { class: [_vm.prefixCls + '-group-append', _vm.prefixCls + '-search'], on: { "click": _vm.handleSearch } }, [_vm.enterButton === true ? _c('i', { staticClass: "ivu-icon ivu-icon-ios-search" }) : [_vm._v(_vm._s(_vm.enterButton))]], 2) : _vm.showPrefix ? _c('span', { staticClass: "ivu-input-prefix" }, [_vm._t("prefix", function () {
+    return [_vm.prefix ? _c('i', { staticClass: "ivu-icon", class: ['ivu-icon-' + _vm.prefix] }) : _vm._e()];
+  })], 2) : _vm._e()] : [_c('textarea', { ref: "textarea", class: _vm.textareaClasses, style: _vm.textareaStyles, attrs: { "id": _vm.elementId, "wrap": _vm.wrap, "autocomplete": _vm.autocomplete, "spellcheck": _vm.spellcheck, "placeholder": _vm.placeholder, "disabled": _vm.itemDisabled, "rows": _vm.rows, "maxlength": _vm.maxlength, "readonly": _vm.readonly, "name": _vm.name, "autofocus": _vm.autofocus }, domProps: { "value": _vm.currentValue }, on: { "keyup": [function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) {
           return null;
-        }return _vm.handleEnter($event);
+        }return _vm.handleEnter.apply(null, arguments);
       }, _vm.handleKeyup], "keypress": _vm.handleKeypress, "keydown": _vm.handleKeydown, "focus": _vm.handleFocus, "blur": _vm.handleBlur, "compositionstart": _vm.handleComposition, "compositionupdate": _vm.handleComposition, "compositionend": _vm.handleComposition, "input": _vm.handleInput } }), _vm._v(" "), _vm.showWordLimit ? _c('span', { staticClass: "ivu-input-word-count" }, [_vm._v(_vm._s(_vm.textLength) + "/" + _vm._s(_vm.upperLimit))]) : _vm._e()]], 2);
 };
 var staticRenderFns = [];
@@ -32901,11 +32933,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('i-select', { ref: "select", staticClass: "ivu-auto-complete", attrs: { "label": _vm.label, "disabled": _vm.itemDisabled, "clearable": _vm.clearable, "placeholder": _vm.placeholder, "size": _vm.size, "placement": _vm.placement, "value": _vm.currentValue, "transfer-class-name": _vm.transferClassName, "filterable": "", "remote": "", "auto-complete": "", "remote-method": _vm.remoteMethod, "transfer": _vm.transfer, "capture": _vm.capture, "eventsEnabled": _vm.eventsEnabled }, on: { "on-select": _vm.handleSelect, "on-clickoutside": _vm.handleClickOutside } }, [_vm._t("input", [_c('i-input', { ref: "input", attrs: { "slot": "input", "element-id": _vm.elementId, "name": _vm.name, "placeholder": _vm.placeholder, "disabled": _vm.itemDisabled, "size": _vm.size, "icon": _vm.inputIcon }, on: { "on-click": _vm.handleClear, "on-focus": _vm.handleFocus, "on-blur": _vm.handleBlur }, slot: "input", model: { value: _vm.currentValue, callback: function callback($$v) {
-        _vm.currentValue = $$v;
-      }, expression: "currentValue" } })]), _vm._v(" "), _vm._t("default", _vm._l(_vm.filteredData, function (item) {
-    return _c('i-option', { key: item, attrs: { "value": item } }, [_vm._v(_vm._s(item))]);
-  }))], 2);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('i-select', { ref: "select", staticClass: "ivu-auto-complete", attrs: { "label": _vm.label, "disabled": _vm.itemDisabled, "clearable": _vm.clearable, "placeholder": _vm.placeholder, "size": _vm.size, "placement": _vm.placement, "value": _vm.currentValue, "transfer-class-name": _vm.transferClassName, "filterable": "", "remote": "", "auto-complete": "", "remote-method": _vm.remoteMethod, "transfer": _vm.transfer, "capture": _vm.capture, "eventsEnabled": _vm.eventsEnabled }, on: { "on-select": _vm.handleSelect, "on-clickoutside": _vm.handleClickOutside } }, [_vm._t("input", function () {
+    return [_c('i-input', { ref: "input", attrs: { "slot": "input", "element-id": _vm.elementId, "name": _vm.name, "placeholder": _vm.placeholder, "disabled": _vm.itemDisabled, "size": _vm.size, "icon": _vm.inputIcon }, on: { "on-click": _vm.handleClear, "on-focus": _vm.handleFocus, "on-blur": _vm.handleBlur }, slot: "input", model: { value: _vm.currentValue, callback: function callback($$v) {
+          _vm.currentValue = $$v;
+        }, expression: "currentValue" } })];
+  }), _vm._v(" "), _vm._t("default", function () {
+    return _vm._l(_vm.filteredData, function (item) {
+      return _c('i-option', { key: item, attrs: { "value": item } }, [_vm._v(_vm._s(item))]);
+    });
+  })], 2);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -33016,7 +33052,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.classes, style: _vm.styles, on: { "click": _vm.back } }, [_vm._t("default", [_c('div', { class: _vm.innerClasses }, [_c('i', { staticClass: "ivu-icon ivu-icon-ios-arrow-up" })])])], 2);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.classes, style: _vm.styles, on: { "click": _vm.back } }, [_vm._t("default", function () {
+    return [_c('div', { class: _vm.innerClasses }, [_c('i', { staticClass: "ivu-icon ivu-icon-ios-arrow-up" })])];
+  })], 2);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -33091,7 +33129,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _vm.dot ? _c('span', { ref: "badge", class: _vm.classes }, [_vm._t("default"), _vm._v(" "), _c('sup', { directives: [{ name: "show", rawName: "v-show", value: _vm.badge, expression: "badge" }], class: _vm.dotClasses, style: _vm.styles })], 2) : _vm.status || _vm.color ? _c('span', { ref: "badge", staticClass: "ivu-badge-status", class: _vm.classes }, [_c('span', { class: _vm.statusClasses, style: _vm.statusStyles }), _vm._v(" "), _c('span', { staticClass: "ivu-badge-status-text" }, [_vm._t("text", [_vm._v(_vm._s(_vm.text))])], 2)]) : _c('span', { ref: "badge", class: _vm.classes }, [_vm._t("default"), _vm._v(" "), _vm.$slots.count ? _c('sup', { class: _vm.customCountClasses, style: _vm.styles }, [_vm._t("count")], 2) : _vm.hasCount ? _c('sup', { directives: [{ name: "show", rawName: "v-show", value: _vm.badge, expression: "badge" }], class: _vm.countClasses, style: _vm.styles }, [_vm._t("text", [_vm._v(_vm._s(_vm.finalCount))])], 2) : _vm._e()], 2);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _vm.dot ? _c('span', { ref: "badge", class: _vm.classes }, [_vm._t("default"), _vm._v(" "), _c('sup', { directives: [{ name: "show", rawName: "v-show", value: _vm.badge, expression: "badge" }], class: _vm.dotClasses, style: _vm.styles })], 2) : _vm.status || _vm.color ? _c('span', { ref: "badge", staticClass: "ivu-badge-status", class: _vm.classes }, [_c('span', { class: _vm.statusClasses, style: _vm.statusStyles }), _vm._v(" "), _c('span', { staticClass: "ivu-badge-status-text" }, [_vm._t("text", function () {
+    return [_vm._v(_vm._s(_vm.text))];
+  })], 2)]) : _c('span', { ref: "badge", class: _vm.classes }, [_vm._t("default"), _vm._v(" "), _vm.$slots.count ? _c('sup', { class: _vm.customCountClasses, style: _vm.styles }, [_vm._t("count")], 2) : _vm.hasCount ? _c('sup', { directives: [{ name: "show", rawName: "v-show", value: _vm.badge, expression: "badge" }], class: _vm.countClasses, style: _vm.styles }, [_vm._t("text", function () {
+    return [_vm._v(_vm._s(_vm.finalCount))];
+  })], 2) : _vm._e()], 2);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -33411,7 +33453,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c(_vm.tagName, _vm._b({ tag: "component", class: _vm.classes, on: { "click": _vm.handleClickLink } }, 'component', _vm.tagProps, false), [_vm.showHead ? _c('div', { class: _vm.headClasses }, [_vm._t("title", [_vm.title ? _c('p', [_vm.icon ? _c('Icon', { attrs: { "type": _vm.icon } }) : _vm._e(), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.title))])], 1) : _vm._e()])], 2) : _vm._e(), _vm._v(" "), _vm.showExtra ? _c('div', { class: _vm.extraClasses }, [_vm._t("extra")], 2) : _vm._e(), _vm._v(" "), _c('div', { class: _vm.bodyClasses, style: _vm.bodyStyles }, [_vm._t("default")], 2)]);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c(_vm.tagName, _vm._b({ tag: "component", class: _vm.classes, on: { "click": _vm.handleClickLink } }, 'component', _vm.tagProps, false), [_vm.showHead ? _c('div', { class: _vm.headClasses }, [_vm._t("title", function () {
+    return [_vm.title ? _c('p', [_vm.icon ? _c('Icon', { attrs: { "type": _vm.icon } }) : _vm._e(), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.title))])], 1) : _vm._e()];
+  })], 2) : _vm._e(), _vm._v(" "), _vm.showExtra ? _c('div', { class: _vm.extraClasses }, [_vm._t("extra")], 2) : _vm._e(), _vm._v(" "), _c('div', { class: _vm.bodyClasses, style: _vm.bodyStyles }, [_vm._t("default")], 2)]);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -33754,9 +33798,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { directives: [{ name: "click-outside", rawName: "v-click-outside", value: _vm.handleClose, expression: "handleClose" }], class: _vm.classes }, [_c('div', { ref: "reference", class: [_vm.prefixCls + '-rel'], on: { "click": _vm.toggleOpen } }, [_c('input', { attrs: { "type": "hidden", "name": _vm.name }, domProps: { "value": _vm.currentValue } }), _vm._v(" "), _vm._t("default", [_c('i-input', { ref: "input", attrs: { "element-id": _vm.elementId, "readonly": !_vm.filterable, "disabled": _vm.itemDisabled, "value": _vm.displayInputRender, "size": _vm.size, "placeholder": _vm.inputPlaceholder }, on: { "on-change": _vm.handleInput } }), _vm._v(" "), _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.filterable && _vm.query === '', expression: "filterable && query === ''" }], class: [_vm.prefixCls + '-label'], on: { "click": _vm.handleFocus } }, [_vm._v(_vm._s(_vm.displayRender))]), _vm._v(" "), _c('Icon', { directives: [{ name: "show", rawName: "v-show", value: _vm.showCloseIcon, expression: "showCloseIcon" }], class: [_vm.prefixCls + '-arrow'], attrs: { "type": "ios-close-circle" }, nativeOn: { "click": function click($event) {
-        $event.stopPropagation();return _vm.clearSelect($event);
-      } } }), _vm._v(" "), _c('Icon', { class: [_vm.prefixCls + '-arrow'], attrs: { "type": _vm.arrowType, "custom": _vm.customArrowType, "size": _vm.arrowSize } })])], 2), _vm._v(" "), _c('transition', { attrs: { "name": "transition-drop" } }, [_c('Drop', { directives: [{ name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }, { name: "transfer-dom", rawName: "v-transfer-dom" }], ref: "drop", class: _vm.dropdownCls, attrs: { "eventsEnabled": _vm.eventsEnabled, "data-transfer": _vm.transfer, "transfer": _vm.transfer } }, [_c('div', [_c('Caspanel', { directives: [{ name: "show", rawName: "v-show", value: !_vm.filterable || _vm.filterable && _vm.query === '', expression: "!filterable || (filterable && query === '')" }], ref: "caspanel", attrs: { "prefix-cls": _vm.prefixCls, "data": _vm.data, "disabled": _vm.itemDisabled, "change-on-select": _vm.changeOnSelect, "trigger": _vm.trigger } }), _vm._v(" "), _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.filterable && _vm.query !== '' && _vm.querySelections.length, expression: "filterable && query !== '' && querySelections.length" }], class: [_vm.prefixCls + '-dropdown'] }, [_c('ul', { class: [_vm.selectPrefixCls + '-dropdown-list'] }, _vm._l(_vm.querySelections, function (item, index) {
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { directives: [{ name: "click-outside", rawName: "v-click-outside", value: _vm.handleClose, expression: "handleClose" }], class: _vm.classes }, [_c('div', { ref: "reference", class: [_vm.prefixCls + '-rel'], on: { "click": _vm.toggleOpen } }, [_c('input', { attrs: { "type": "hidden", "name": _vm.name }, domProps: { "value": _vm.currentValue } }), _vm._v(" "), _vm._t("default", function () {
+    return [_c('i-input', { ref: "input", attrs: { "element-id": _vm.elementId, "readonly": !_vm.filterable, "disabled": _vm.itemDisabled, "value": _vm.displayInputRender, "size": _vm.size, "placeholder": _vm.inputPlaceholder }, on: { "on-change": _vm.handleInput } }), _vm._v(" "), _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.filterable && _vm.query === '', expression: "filterable && query === ''" }], class: [_vm.prefixCls + '-label'], on: { "click": _vm.handleFocus } }, [_vm._v(_vm._s(_vm.displayRender))]), _vm._v(" "), _c('Icon', { directives: [{ name: "show", rawName: "v-show", value: _vm.showCloseIcon, expression: "showCloseIcon" }], class: [_vm.prefixCls + '-arrow'], attrs: { "type": "ios-close-circle" }, nativeOn: { "click": function click($event) {
+          $event.stopPropagation();return _vm.clearSelect.apply(null, arguments);
+        } } }), _vm._v(" "), _c('Icon', { class: [_vm.prefixCls + '-arrow'], attrs: { "type": _vm.arrowType, "custom": _vm.customArrowType, "size": _vm.arrowSize } })];
+  })], 2), _vm._v(" "), _c('transition', { attrs: { "name": "transition-drop" } }, [_c('Drop', { directives: [{ name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }, { name: "transfer-dom", rawName: "v-transfer-dom" }], ref: "drop", class: _vm.dropdownCls, attrs: { "eventsEnabled": _vm.eventsEnabled, "data-transfer": _vm.transfer, "transfer": _vm.transfer } }, [_c('div', [_c('Caspanel', { directives: [{ name: "show", rawName: "v-show", value: !_vm.filterable || _vm.filterable && _vm.query === '', expression: "!filterable || (filterable && query === '')" }], ref: "caspanel", attrs: { "prefix-cls": _vm.prefixCls, "data": _vm.data, "disabled": _vm.itemDisabled, "change-on-select": _vm.changeOnSelect, "trigger": _vm.trigger } }), _vm._v(" "), _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.filterable && _vm.query !== '' && _vm.querySelections.length, expression: "filterable && query !== '' && querySelections.length" }], class: [_vm.prefixCls + '-dropdown'] }, [_c('ul', { class: [_vm.selectPrefixCls + '-dropdown-list'] }, _vm._l(_vm.querySelections, function (item, index) {
     var _obj;
     return _c('li', { class: [_vm.selectPrefixCls + '-item', (_obj = {}, _obj[_vm.selectPrefixCls + '-item-disabled'] = item.disabled, _obj)], domProps: { "innerHTML": _vm._s(item.display) }, on: { "click": function click($event) {
           return _vm.handleSelectItem(index);
@@ -33880,7 +33926,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "ivu-cell-item" }, [_c('div', { staticClass: "ivu-cell-icon" }, [_vm._t("icon")], 2), _vm._v(" "), _c('div', { staticClass: "ivu-cell-main" }, [_c('div', { staticClass: "ivu-cell-title" }, [_vm._t("default", [_vm._v(_vm._s(_vm.title))])], 2), _vm._v(" "), _c('div', { staticClass: "ivu-cell-label" }, [_vm._t("label", [_vm._v(_vm._s(_vm.label))])], 2)]), _vm._v(" "), _c('div', { staticClass: "ivu-cell-footer" }, [_c('span', { staticClass: "ivu-cell-extra" }, [_vm._t("extra", [_vm._v(_vm._s(_vm.extra))])], 2)])]);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "ivu-cell-item" }, [_c('div', { staticClass: "ivu-cell-icon" }, [_vm._t("icon")], 2), _vm._v(" "), _c('div', { staticClass: "ivu-cell-main" }, [_c('div', { staticClass: "ivu-cell-title" }, [_vm._t("default", function () {
+    return [_vm._v(_vm._s(_vm.title))];
+  })], 2), _vm._v(" "), _c('div', { staticClass: "ivu-cell-label" }, [_vm._t("label", function () {
+    return [_vm._v(_vm._s(_vm.label))];
+  })], 2)]), _vm._v(" "), _c('div', { staticClass: "ivu-cell-footer" }, [_c('span', { staticClass: "ivu-cell-extra" }, [_vm._t("extra", function () {
+    return [_vm._v(_vm._s(_vm.extra))];
+  })], 2)])]);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -33909,7 +33961,9 @@ var render = function render() {
         if (!$event.metaKey) {
           return null;
         }return _vm.handleClickItem($event, true);
-      }] } }, [_c('CellItem', { attrs: { "title": _vm.title, "label": _vm.label, "extra": _vm.extra } }, [_vm._t("icon", null, { "slot": "icon" }), _vm._v(" "), _vm._t("default", null, { "slot": "default" }), _vm._v(" "), _vm._t("extra", null, { "slot": "extra" }), _vm._v(" "), _vm._t("label", null, { "slot": "label" })], 2)], 1) : _c('div', { staticClass: "ivu-cell-link", on: { "click": _vm.handleClickItem } }, [_c('CellItem', { attrs: { "title": _vm.title, "label": _vm.label, "extra": _vm.extra } }, [_vm._t("icon", null, { "slot": "icon" }), _vm._v(" "), _vm._t("default", null, { "slot": "default" }), _vm._v(" "), _vm._t("extra", null, { "slot": "extra" }), _vm._v(" "), _vm._t("label", null, { "slot": "label" })], 2)], 1), _vm._v(" "), _vm.to ? _c('div', { staticClass: "ivu-cell-arrow" }, [_vm._t("arrow", [_c('Icon', { attrs: { "type": _vm.arrowType, "custom": _vm.customArrowType, "size": _vm.arrowSize } })])], 2) : _vm._e()]);
+      }] } }, [_c('CellItem', { attrs: { "title": _vm.title, "label": _vm.label, "extra": _vm.extra } }, [_vm._t("icon", null, { "slot": "icon" }), _vm._v(" "), _vm._t("default", null, { "slot": "default" }), _vm._v(" "), _vm._t("extra", null, { "slot": "extra" }), _vm._v(" "), _vm._t("label", null, { "slot": "label" })], 2)], 1) : _c('div', { staticClass: "ivu-cell-link", on: { "click": _vm.handleClickItem } }, [_c('CellItem', { attrs: { "title": _vm.title, "label": _vm.label, "extra": _vm.extra } }, [_vm._t("icon", null, { "slot": "icon" }), _vm._v(" "), _vm._t("default", null, { "slot": "default" }), _vm._v(" "), _vm._t("extra", null, { "slot": "extra" }), _vm._v(" "), _vm._t("label", null, { "slot": "label" })], 2)], 1), _vm._v(" "), _vm.to ? _c('div', { staticClass: "ivu-cell-arrow" }, [_vm._t("arrow", function () {
+    return [_c('Icon', { attrs: { "type": _vm.arrowType, "custom": _vm.customArrowType, "size": _vm.arrowSize } })];
+  })], 2) : _vm._e()]);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -34019,7 +34073,9 @@ var render = function render() {
         } else {
           _vm.model = $$c;
         }
-      }, _vm.change], "focus": _vm.onFocus, "blur": _vm.onBlur } }) : _c('input', { class: _vm.inputClasses, attrs: { "type": "checkbox", "disabled": _vm.itemDisabled, "name": _vm.name }, domProps: { "checked": _vm.currentValue }, on: { "change": _vm.change, "focus": _vm.onFocus, "blur": _vm.onBlur } })]), _vm._v(" "), _vm._t("default", [_vm.showSlot ? _c('span', [_vm._v(_vm._s(_vm.label))]) : _vm._e()])], 2);
+      }, _vm.change], "focus": _vm.onFocus, "blur": _vm.onBlur } }) : _c('input', { class: _vm.inputClasses, attrs: { "type": "checkbox", "disabled": _vm.itemDisabled, "name": _vm.name }, domProps: { "checked": _vm.currentValue }, on: { "change": _vm.change, "focus": _vm.onFocus, "blur": _vm.onBlur } })]), _vm._v(" "), _vm._t("default", function () {
+    return [_vm.showSlot ? _c('span', [_vm._v(_vm._s(_vm.label))]) : _vm._e()];
+  })], 2);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -34387,11 +34443,11 @@ var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { ref: "reference", attrs: { "tabindex": "0" }, on: { "click": _vm.handleClick, "keydown": [function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "esc", 27, $event.key, ["Esc", "Escape"])) {
           return null;
-        }return _vm.handleEscape($event);
+        }return _vm.handleEscape.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) {
           return null;
-        }return _vm.handleEnter($event);
+        }return _vm.handleEnter.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "left", 37, $event.key, ["Left", "ArrowLeft"])) {
           return null;
@@ -34473,27 +34529,27 @@ var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: [_vm.prefixCls + '-saturation-wrapper'], attrs: { "tabindex": "0" }, on: { "keydown": [function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "esc", 27, $event.key, ["Esc", "Escape"])) {
           return null;
-        }return _vm.handleEscape($event);
+        }return _vm.handleEscape.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "left", 37, $event.key, ["Left", "ArrowLeft"])) {
           return null;
         }if ('button' in $event && $event.button !== 0) {
           return null;
-        }return _vm.handleLeft($event);
+        }return _vm.handleLeft.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "right", 39, $event.key, ["Right", "ArrowRight"])) {
           return null;
         }if ('button' in $event && $event.button !== 2) {
           return null;
-        }return _vm.handleRight($event);
+        }return _vm.handleRight.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "up", 38, $event.key, ["Up", "ArrowUp"])) {
           return null;
-        }return _vm.handleUp($event);
+        }return _vm.handleUp.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "down", 40, $event.key, ["Down", "ArrowDown"])) {
           return null;
-        }return _vm.handleDown($event);
+        }return _vm.handleDown.apply(null, arguments);
       }], "click": function click($event) {
         return _vm.$el.focus();
       } } }, [_c('div', { ref: "container", class: [_vm.prefixCls + '-saturation'], style: _vm.bgColorStyle, on: { "mousedown": _vm.handleMouseDown } }, [_c('div', { class: [_vm.prefixCls + '-saturation--white'] }), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-saturation--black'] }), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-saturation-pointer'], style: _vm.pointerStyle }, [_c('div', { class: [_vm.prefixCls + '-saturation-circle'] })])])]);
@@ -34557,27 +34613,27 @@ var render = function render() {
       }, "keydown": [function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "esc", 27, $event.key, ["Esc", "Escape"])) {
           return null;
-        }return _vm.handleEscape($event);
+        }return _vm.handleEscape.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "left", 37, $event.key, ["Left", "ArrowLeft"])) {
           return null;
         }if ('button' in $event && $event.button !== 0) {
           return null;
-        }return _vm.handleLeft($event);
+        }return _vm.handleLeft.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "right", 39, $event.key, ["Right", "ArrowRight"])) {
           return null;
         }if ('button' in $event && $event.button !== 2) {
           return null;
-        }return _vm.handleRight($event);
+        }return _vm.handleRight.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "up", 38, $event.key, ["Up", "ArrowUp"])) {
           return null;
-        }return _vm.handleUp($event);
+        }return _vm.handleUp.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "down", 40, $event.key, ["Down", "ArrowDown"])) {
           return null;
-        }return _vm.handleDown($event);
+        }return _vm.handleDown.apply(null, arguments);
       }] } }, [_c('div', { ref: "container", class: [_vm.prefixCls + '-hue-container'], on: { "mousedown": _vm.handleMouseDown, "touchmove": _vm.handleChange, "touchstart": _vm.handleChange } }, [_c('div', { class: [_vm.prefixCls + '-hue-pointer'], style: { top: 0, left: _vm.percent + "%" } }, [_c('div', { class: [_vm.prefixCls + '-hue-picker'] })])])]);
 };
 var staticRenderFns = [];
@@ -34639,27 +34695,27 @@ var render = function render() {
       }, "keydown": [function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "esc", 27, $event.key, ["Esc", "Escape"])) {
           return null;
-        }return _vm.handleEscape($event);
+        }return _vm.handleEscape.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "left", 37, $event.key, ["Left", "ArrowLeft"])) {
           return null;
         }if ('button' in $event && $event.button !== 0) {
           return null;
-        }return _vm.handleLeft($event);
+        }return _vm.handleLeft.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "right", 39, $event.key, ["Right", "ArrowRight"])) {
           return null;
         }if ('button' in $event && $event.button !== 2) {
           return null;
-        }return _vm.handleRight($event);
+        }return _vm.handleRight.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "up", 38, $event.key, ["Up", "ArrowUp"])) {
           return null;
-        }return _vm.handleUp($event);
+        }return _vm.handleUp.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "down", 40, $event.key, ["Down", "ArrowDown"])) {
           return null;
-        }return _vm.handleDown($event);
+        }return _vm.handleDown.apply(null, arguments);
       }] } }, [_c('div', { class: [_vm.prefixCls + '-alpha-checkboard-wrap'] }, [_c('div', { class: [_vm.prefixCls + '-alpha-checkerboard'] })]), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-alpha-gradient'], style: _vm.gradientStyle }), _vm._v(" "), _c('div', { ref: "container", class: [_vm.prefixCls + '-alpha-container'], on: { "mousedown": _vm.handleMouseDown, "touchmove": _vm.handleChange, "touchstart": _vm.handleChange } }, [_c('div', { class: [_vm.prefixCls + '-alpha-pointer'], style: { top: 0, left: _vm.value.a * 100 + "%" } }, [_c('div', { class: [_vm.prefixCls + '-alpha-picker'] })])])]);
 };
 var staticRenderFns = [];
@@ -34680,23 +34736,23 @@ var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { directives: [{ name: "click-outside", rawName: "v-click-outside:[capture]", value: _vm.handleClose, expression: "handleClose", arg: _vm.capture }], class: _vm.classes }, [_c('div', { ref: "reference", class: _vm.wrapClasses, on: { "click": _vm.toggleVisible } }, [_c('input', { attrs: { "name": _vm.name, "type": "hidden" }, domProps: { "value": _vm.currentValue } }), _vm._v(" "), _c('Icon', { class: _vm.arrowClasses, attrs: { "type": _vm.arrowType, "custom": _vm.customArrowType, "size": _vm.arrowSize } }), _vm._v(" "), _c('div', { ref: "input", class: _vm.inputClasses, attrs: { "tabindex": _vm.itemDisabled ? undefined : 0 }, on: { "keydown": [function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "tab", 9, $event.key, "Tab")) {
           return null;
-        }return _vm.onTab($event);
+        }return _vm.onTab.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "esc", 27, $event.key, ["Esc", "Escape"])) {
           return null;
-        }return _vm.onEscape($event);
+        }return _vm.onEscape.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "up", 38, $event.key, ["Up", "ArrowUp"])) {
           return null;
-        }return _vm.onArrow($event);
+        }return _vm.onArrow.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "down", 40, $event.key, ["Down", "ArrowDown"])) {
           return null;
-        }return _vm.onArrow($event);
+        }return _vm.onArrow.apply(null, arguments);
       }] } }, [_c('div', { class: [_vm.prefixCls + '-color'] }, [_c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.value === '' && !_vm.visible, expression: "value === '' && !visible" }], class: [_vm.prefixCls + '-color-empty'] }, [_c('i', { class: [_vm.iconPrefixCls, _vm.iconPrefixCls + '-ios-close'] })]), _vm._v(" "), _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.value || _vm.visible, expression: "value || visible" }], style: _vm.displayedColorStyle })])])], 1), _vm._v(" "), _c('transition', { attrs: { "name": "transition-drop" } }, [_c('Drop', { directives: [{ name: "transfer-dom", rawName: "v-transfer-dom" }, { name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }], ref: "drop", class: _vm.dropClasses, attrs: { "placement": _vm.placement, "data-transfer": _vm.transfer, "transfer": _vm.transfer, "eventsEnabled": _vm.eventsEnabled } }, [_c('transition', { attrs: { "name": "fade" } }, [_vm.visible ? _c('div', { class: [_vm.prefixCls + '-picker'] }, [_c('div', { class: [_vm.prefixCls + '-picker-wrapper'] }, [_c('div', { class: [_vm.prefixCls + '-picker-panel'] }, [_c('Saturation', { ref: "saturation", attrs: { "focused": _vm.visible }, on: { "change": _vm.childChange }, nativeOn: { "keydown": function keydown($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "tab", 9, $event.key, "Tab")) {
           return null;
-        }return _vm.handleFirstTab($event);
+        }return _vm.handleFirstTab.apply(null, arguments);
       } }, model: { value: _vm.saturationColors, callback: function callback($$v) {
         _vm.saturationColors = $$v;
       }, expression: "saturationColors" } })], 1), _vm._v(" "), _vm.hue ? _c('div', { class: [_vm.prefixCls + '-picker-hue-slider'] }, [_c('Hue', { on: { "change": _vm.childChange }, model: { value: _vm.saturationColors, callback: function callback($$v) {
@@ -34706,27 +34762,27 @@ var render = function render() {
       }, expression: "saturationColors" } })], 1) : _vm._e(), _vm._v(" "), _vm.colors.length ? _c('recommend-colors', { class: [_vm.prefixCls + '-picker-colors'], attrs: { "list": _vm.colors }, on: { "picker-color": _vm.handleSelectColor } }) : _vm._e(), _vm._v(" "), !_vm.colors.length && _vm.recommend ? _c('recommend-colors', { class: [_vm.prefixCls + '-picker-colors'], attrs: { "list": _vm.recommendedColor }, on: { "picker-color": _vm.handleSelectColor } }) : _vm._e()], 1), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-confirm'] }, [_c('span', { class: _vm.confirmColorClasses }, [_vm.editable ? [_c('i-input', { ref: "editColorInput", attrs: { "value": _vm.formatColor, "size": "small" }, on: { "on-enter": _vm.handleEditColor, "on-blur": _vm.handleEditColor } })] : [_vm._v(_vm._s(_vm.formatColor))]], 2), _vm._v(" "), _c('i-button', { ref: "clear", attrs: { "tabindex": 0, "size": "small" }, on: { "keydown": function keydown($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) {
           return null;
-        }return _vm.handleClear($event);
+        }return _vm.handleClear.apply(null, arguments);
       } }, nativeOn: { "click": function click($event) {
-        return _vm.handleClear($event);
+        return _vm.handleClear.apply(null, arguments);
       }, "keydown": function keydown($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "esc", 27, $event.key, ["Esc", "Escape"])) {
           return null;
-        }return _vm.closer($event);
+        }return _vm.closer.apply(null, arguments);
       } } }, [_vm._v(_vm._s(_vm.t('i.datepicker.clear')))]), _vm._v(" "), _c('i-button', { ref: "ok", attrs: { "tabindex": 0, "size": "small", "type": "primary" }, on: { "keydown": function keydown($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) {
           return null;
-        }return _vm.handleSuccess($event);
+        }return _vm.handleSuccess.apply(null, arguments);
       } }, nativeOn: { "click": function click($event) {
-        return _vm.handleSuccess($event);
+        return _vm.handleSuccess.apply(null, arguments);
       }, "keydown": [function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "tab", 9, $event.key, "Tab")) {
           return null;
-        }return _vm.handleLastTab($event);
+        }return _vm.handleLastTab.apply(null, arguments);
       }, function ($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "esc", 27, $event.key, ["Esc", "Escape"])) {
           return null;
-        }return _vm.closer($event);
+        }return _vm.closer.apply(null, arguments);
       }] } }, [_vm._v(_vm._s(_vm.t('i.datepicker.ok')))])], 1)]) : _vm._e()])], 1)], 1)], 1);
 };
 var staticRenderFns = [];
@@ -35153,16 +35209,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { directives: [{ name: "click-outside", rawName: "v-click-outside:[capture].mousedown", value: _vm.handleClose, expression: "handleClose", arg: _vm.capture, modifiers: { "mousedown": true } }, { name: "click-outside", rawName: "v-click-outside:[capture].touchstart", value: _vm.handleClose, expression: "handleClose", arg: _vm.capture, modifiers: { "touchstart": true } }, { name: "click-outside", rawName: "v-click-outside:[capture]", value: _vm.handleClose, expression: "handleClose", arg: _vm.capture }], class: _vm.wrapperClasses }, [_c('div', { ref: "reference", class: [_vm.prefixCls + '-rel'] }, [_vm._t("default", [_c('i-input', { key: _vm.forceInputRerender, ref: "input", class: [_vm.prefixCls + '-editor'], attrs: { "element-id": _vm.elementId, "readonly": !_vm.editable || _vm.readonly, "disabled": _vm.itemDisabled, "size": _vm.size, "placeholder": _vm.placeholder, "value": _vm.visualValue, "name": _vm.name }, on: { "on-input-change": _vm.handleInputChange, "on-focus": _vm.handleFocus, "on-blur": _vm.handleBlur }, nativeOn: { "click": function click($event) {
-        return _vm.handleFocus($event);
-      }, "keydown": function keydown($event) {
-        return _vm.handleKeydown($event);
-      }, "mouseenter": function mouseenter($event) {
-        return _vm.handleInputMouseenter($event);
-      }, "mouseleave": function mouseleave($event) {
-        return _vm.handleInputMouseleave($event);
-      } } }, [_c('Icon', { attrs: { "slot": "suffix", "type": _vm.arrowType, "custom": _vm.customArrowType, "size": _vm.arrowSize }, on: { "click": _vm.handleIconClick }, slot: "suffix" })], 1)])], 2), _vm._v(" "), _c('transition', { attrs: { "name": "transition-drop" } }, [_c('Drop', { directives: [{ name: "show", rawName: "v-show", value: _vm.opened, expression: "opened" }, { name: "transfer-dom", rawName: "v-transfer-dom" }], ref: "drop", class: _vm.dropdownCls, attrs: { "placement": _vm.placement, "eventsEnabled": _vm.eventsEnabled, "data-transfer": _vm.transfer, "transfer": _vm.transfer }, nativeOn: { "click": function click($event) {
-        return _vm.handleTransferClick($event);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { directives: [{ name: "click-outside", rawName: "v-click-outside:[capture].mousedown", value: _vm.handleClose, expression: "handleClose", arg: _vm.capture, modifiers: { "mousedown": true } }, { name: "click-outside", rawName: "v-click-outside:[capture].touchstart", value: _vm.handleClose, expression: "handleClose", arg: _vm.capture, modifiers: { "touchstart": true } }, { name: "click-outside", rawName: "v-click-outside:[capture]", value: _vm.handleClose, expression: "handleClose", arg: _vm.capture }], class: _vm.wrapperClasses }, [_c('div', { ref: "reference", class: [_vm.prefixCls + '-rel'] }, [_vm._t("default", function () {
+    return [_c('i-input', { key: _vm.forceInputRerender, ref: "input", class: [_vm.prefixCls + '-editor'], attrs: { "element-id": _vm.elementId, "readonly": !_vm.editable || _vm.readonly, "disabled": _vm.itemDisabled, "size": _vm.size, "placeholder": _vm.placeholder, "value": _vm.visualValue, "name": _vm.name }, on: { "on-input-change": _vm.handleInputChange, "on-focus": _vm.handleFocus, "on-blur": _vm.handleBlur }, nativeOn: { "click": function click($event) {
+          return _vm.handleFocus.apply(null, arguments);
+        }, "keydown": function keydown($event) {
+          return _vm.handleKeydown.apply(null, arguments);
+        }, "mouseenter": function mouseenter($event) {
+          return _vm.handleInputMouseenter.apply(null, arguments);
+        }, "mouseleave": function mouseleave($event) {
+          return _vm.handleInputMouseleave.apply(null, arguments);
+        } } }, [_c('Icon', { attrs: { "slot": "suffix", "type": _vm.arrowType, "custom": _vm.customArrowType, "size": _vm.arrowSize }, on: { "click": _vm.handleIconClick }, slot: "suffix" })], 1)];
+  })], 2), _vm._v(" "), _c('transition', { attrs: { "name": "transition-drop" } }, [_c('Drop', { directives: [{ name: "show", rawName: "v-show", value: _vm.opened, expression: "opened" }, { name: "transfer-dom", rawName: "v-transfer-dom" }], ref: "drop", class: _vm.dropdownCls, attrs: { "placement": _vm.placement, "eventsEnabled": _vm.eventsEnabled, "data-transfer": _vm.transfer, "transfer": _vm.transfer }, nativeOn: { "click": function click($event) {
+        return _vm.handleTransferClick.apply(null, arguments);
       } } }, [_c('div', [_c(_vm.panel, _vm._b({ ref: "pickerPanel", tag: "component", attrs: { "visible": _vm.visible, "showTime": _vm.type === 'datetime' || _vm.type === 'datetimerange', "confirm": _vm.isConfirm, "selectionMode": _vm.selectionMode, "steps": _vm.steps, "format": _vm.format, "value": _vm.internalValue, "start-date": _vm.startDate, "split-panels": _vm.splitPanels, "show-week-numbers": _vm.showWeekNumbers, "picker-type": _vm.type, "multiple": _vm.multiple, "focused-date": _vm.focusedDate, "time-picker-options": _vm.timePickerOptions }, on: { "on-pick": _vm.onPick, "on-pick-clear": _vm.handleClear, "on-pick-success": _vm.onPickSuccess, "on-pick-click": function onPickClick($event) {
         _vm.disableClickOutSide = true;
       }, "on-selection-mode-change": _vm.onSelectionModeChange } }, 'component', _vm.ownPickerProps, false))], 1)])], 1)], 1);
@@ -35597,19 +35655,19 @@ var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: [_vm.prefixCls + '-confirm'], on: { "!keydown": function keydown($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "tab", 9, $event.key, "Tab")) {
           return null;
-        }return _vm.handleTab($event);
+        }return _vm.handleTab.apply(null, arguments);
       } } }, [_vm.showTime ? _c('i-button', { class: _vm.timeClasses, attrs: { "size": "small", "type": "text", "disabled": _vm.timeDisabled }, on: { "click": _vm.handleToggleTime } }, [_vm._v("\n        " + _vm._s(_vm.labels.time) + "\n    ")]) : _vm._e(), _vm._v(" "), _c('i-button', { attrs: { "size": "small" }, nativeOn: { "click": function click($event) {
-        return _vm.handleClear($event);
+        return _vm.handleClear.apply(null, arguments);
       }, "keydown": function keydown($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) {
           return null;
-        }return _vm.handleClear($event);
+        }return _vm.handleClear.apply(null, arguments);
       } } }, [_vm._v("\n        " + _vm._s(_vm.labels.clear) + "\n    ")]), _vm._v(" "), _c('i-button', { attrs: { "size": "small", "type": "primary" }, nativeOn: { "click": function click($event) {
-        return _vm.handleSuccess($event);
+        return _vm.handleSuccess.apply(null, arguments);
       }, "keydown": function keydown($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) {
           return null;
-        }return _vm.handleSuccess($event);
+        }return _vm.handleSuccess.apply(null, arguments);
       } } }, [_vm._v("\n        " + _vm._s(_vm.labels.ok) + "\n    ")])], 1);
 };
 var staticRenderFns = [];
@@ -35924,7 +35982,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { directives: [{ name: "transfer-dom", rawName: "v-transfer-dom" }], attrs: { "data-transfer": _vm.transfer } }, [_c('transition', { attrs: { "name": "fade" } }, [_vm.mask ? _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }], class: _vm.maskClasses, style: _vm.maskStyle, on: { "click": _vm.handleMask } }) : _vm._e()]), _vm._v(" "), _c('div', { class: _vm.wrapClasses, on: { "click": _vm.handleWrapClick } }, [_c('transition', { attrs: { "name": _vm.transitionName } }, [_c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }], class: _vm.classes, style: _vm.mainStyles }, [_c('div', { ref: "content", class: _vm.contentClasses }, [_vm.closable ? _c('a', { staticClass: "ivu-drawer-close", on: { "click": _vm.close } }, [_vm._t("close", [_c('Icon', { attrs: { "type": "ios-close" } })])], 2) : _vm._e(), _vm._v(" "), _vm.showHead ? _c('div', { class: [_vm.prefixCls + '-header'] }, [_vm._t("header", [_c('div', { class: [_vm.prefixCls + '-header-inner'] }, [_vm._v(_vm._s(_vm.title))])])], 2) : _vm._e(), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-body'], style: _vm.styles }, [_vm._t("default")], 2)]), _vm._v(" "), _vm.draggable && (_vm.placement === 'left' || _vm.placement === 'right') ? _c('div', { staticClass: "ivu-drawer-drag", class: 'ivu-drawer-drag-' + _vm.placement, on: { "mousedown": _vm.handleTriggerMousedown } }, [_vm._t("trigger", [_c('div', { staticClass: "ivu-drawer-drag-move-trigger" }, [_c('div', { staticClass: "ivu-drawer-drag-move-trigger-point" }, [_c('i'), _c('i'), _c('i'), _c('i'), _c('i')])])])], 2) : _vm._e()])])], 1)], 1);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { directives: [{ name: "transfer-dom", rawName: "v-transfer-dom" }], attrs: { "data-transfer": _vm.transfer } }, [_c('transition', { attrs: { "name": "fade" } }, [_vm.mask ? _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }], class: _vm.maskClasses, style: _vm.maskStyle, on: { "click": _vm.handleMask } }) : _vm._e()]), _vm._v(" "), _c('div', { class: _vm.wrapClasses, on: { "click": _vm.handleWrapClick } }, [_c('transition', { attrs: { "name": _vm.transitionName } }, [_c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }], class: _vm.classes, style: _vm.mainStyles }, [_c('div', { ref: "content", class: _vm.contentClasses }, [_vm.closable ? _c('a', { staticClass: "ivu-drawer-close", on: { "click": _vm.close } }, [_vm._t("close", function () {
+    return [_c('Icon', { attrs: { "type": "ios-close" } })];
+  })], 2) : _vm._e(), _vm._v(" "), _vm.showHead ? _c('div', { class: [_vm.prefixCls + '-header'] }, [_vm._t("header", function () {
+    return [_c('div', { class: [_vm.prefixCls + '-header-inner'] }, [_vm._v(_vm._s(_vm.title))])];
+  })], 2) : _vm._e(), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-body'], style: _vm.styles }, [_vm._t("default")], 2)]), _vm._v(" "), _vm.draggable && (_vm.placement === 'left' || _vm.placement === 'right') ? _c('div', { staticClass: "ivu-drawer-drag", class: 'ivu-drawer-drag-' + _vm.placement, on: { "mousedown": _vm.handleTriggerMousedown } }, [_vm._t("trigger", function () {
+    return [_c('div', { staticClass: "ivu-drawer-drag-move-trigger" }, [_c('div', { staticClass: "ivu-drawer-drag-move-trigger-point" }, [_c('i'), _c('i'), _c('i'), _c('i'), _c('i')])])];
+  })], 2) : _vm._e()])])], 1)], 1);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -35971,11 +36035,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { directives: [{ name: "click-outside", rawName: "v-click-outside", value: _vm.onClickoutside, expression: "onClickoutside" }], class: [_vm.prefixCls], on: { "mouseenter": _vm.handleMouseenter, "mouseleave": _vm.handleMouseleave } }, [_c('div', { ref: "reference", class: _vm.relClasses, on: { "click": _vm.handleClick, "contextmenu": function contextmenu($event) {
-        $event.preventDefault();return _vm.handleRightClick($event);
+        $event.preventDefault();return _vm.handleRightClick.apply(null, arguments);
       } } }, [_vm._t("default")], 2), _vm._v(" "), _c('transition', { attrs: { "name": "transition-drop" } }, [_c('Drop', { directives: [{ name: "show", rawName: "v-show", value: _vm.currentVisible, expression: "currentVisible" }, { name: "transfer-dom", rawName: "v-transfer-dom" }], ref: "drop", class: _vm.dropdownCls, attrs: { "placement": _vm.placement, "eventsEnabled": _vm.eventsEnabled, "data-transfer": _vm.transfer, "transfer": _vm.transfer }, nativeOn: { "mouseenter": function mouseenter($event) {
-        return _vm.handleMouseenter($event);
+        return _vm.handleMouseenter.apply(null, arguments);
       }, "mouseleave": function mouseleave($event) {
-        return _vm.handleMouseleave($event);
+        return _vm.handleMouseleave.apply(null, arguments);
       } } }, [_vm._t("list")], 2)], 1)], 1);
 };
 var staticRenderFns = [];
@@ -36696,7 +36760,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
+
+  _setPrototypeOf(subClass, superClass);
 }
 
 function _getPrototypeOf(o) {
@@ -36721,7 +36786,7 @@ function _isNativeReflectConstruct() {
   if (typeof Proxy === "function") return true;
 
   try {
-    Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
     return true;
   } catch (e) {
     return false;
@@ -36852,11 +36917,6 @@ function format() {
           return x;
       }
     });
-
-    for (var arg = args[i]; i < len; arg = args[++i]) {
-      str += " " + arg;
-    }
-
     return str;
   }
 
@@ -36864,7 +36924,7 @@ function format() {
 }
 
 function isNativeStringType(type) {
-  return type === 'string' || type === 'url' || type === 'hex' || type === 'email' || type === 'pattern';
+  return type === 'string' || type === 'url' || type === 'hex' || type === 'email' || type === 'date' || type === 'pattern';
 }
 
 function isEmptyValue(value, type) {
@@ -37027,7 +37087,7 @@ function deepMerge(target, source) {
         var value = source[s];
 
         if (typeof value === 'object' && typeof target[s] === 'object') {
-          target[s] = _extends(_extends({}, target[s]), value);
+          target[s] = _extends({}, target[s], value);
         } else {
           target[s] = value;
         }
@@ -37104,7 +37164,7 @@ var types = {
     }
   },
   date: function date(value) {
-    return typeof value.getTime === 'function' && typeof value.getMonth === 'function' && typeof value.getYear === 'function';
+    return typeof value.getTime === 'function' && typeof value.getMonth === 'function' && typeof value.getYear === 'function' && !isNaN(value.getTime());
   },
   number: function number(value) {
     if (isNaN(value)) {
@@ -37523,13 +37583,13 @@ function array(rule, value, callback, source, options) {
   var validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
 
   if (validate) {
-    if (isEmptyValue(value, 'array') && !rule.required) {
+    if ((value === undefined || value === null) && !rule.required) {
       return callback();
     }
 
     rules.required(rule, value, source, errors, options, 'array');
 
-    if (!isEmptyValue(value, 'array')) {
+    if (value !== undefined && value !== null) {
       rules.type(rule, value, source, errors, options);
       rules.range(rule, value, source, errors, options);
     }
@@ -37638,19 +37698,19 @@ function date(rule, value, callback, source, options) {
   var validate = rule.required || !rule.required && source.hasOwnProperty(rule.field); // console.log('validate on %s value', value);
 
   if (validate) {
-    if (isEmptyValue(value) && !rule.required) {
+    if (isEmptyValue(value, 'date') && !rule.required) {
       return callback();
     }
 
     rules.required(rule, value, source, errors, options);
 
-    if (!isEmptyValue(value)) {
+    if (!isEmptyValue(value, 'date')) {
       var dateObject;
 
-      if (typeof value === 'number') {
-        dateObject = new Date(value);
-      } else {
+      if (value instanceof Date) {
         dateObject = value;
+      } else {
+        dateObject = new Date(value);
       }
 
       rules.type(rule, dateObject, source, errors, options);
@@ -37956,7 +38016,7 @@ Schema.prototype = {
       rule.field = data.field;
 
       function addFullfield(key, schema) {
-        return _extends(_extends({}, schema), {}, {
+        return _extends({}, schema, {
           fullField: rule.fullField + "." + key
         });
       }
@@ -37976,7 +38036,7 @@ Schema.prototype = {
           Schema.warning('async-validator:', errors);
         }
 
-        if (errors.length && rule.message) {
+        if (errors.length && rule.message !== undefined) {
           errors = [].concat(rule.message);
         }
 
@@ -37994,7 +38054,7 @@ Schema.prototype = {
           // does not exist fail at the rule level and don't
           // go deeper
           if (rule.required && !data.value) {
-            if (rule.message) {
+            if (rule.message !== undefined) {
               errors = [].concat(rule.message).map(complementError(rule));
             } else if (options.error) {
               errors = [options.error(rule, format(options.messages.required, rule.field))];
@@ -38013,7 +38073,7 @@ Schema.prototype = {
             }
           }
 
-          fieldsSchema = _extends(_extends({}, fieldsSchema), data.rule.fields);
+          fieldsSchema = _extends({}, fieldsSchema, data.rule.fields);
 
           for (var f in fieldsSchema) {
             if (fieldsSchema.hasOwnProperty(f)) {
@@ -38324,7 +38384,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.classes }, [_vm.label || _vm.$slots.label ? _c('label', { class: [_vm.prefixCls + '-label'], style: _vm.labelStyles, attrs: { "for": _vm.labelFor } }, [_vm._t("label", [_vm._v(_vm._s(_vm.label) + _vm._s(_vm.FormInstance.colon))])], 2) : _vm._e(), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-content'], style: _vm.contentStyles }, [_vm._t("default"), _vm._v(" "), _c('transition', { attrs: { "name": "fade" } }, [_vm.validateState === 'error' && _vm.showMessage && _vm.FormInstance.showMessage ? _c('div', { class: [_vm.prefixCls + '-error-tip'] }, [_vm._v(_vm._s(_vm.validateMessage))]) : _vm._e()])], 2)]);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.classes }, [_vm.label || _vm.$slots.label ? _c('label', { class: [_vm.prefixCls + '-label'], style: _vm.labelStyles, attrs: { "for": _vm.labelFor } }, [_vm._t("label", function () {
+    return [_vm._v(_vm._s(_vm.label) + _vm._s(_vm.FormInstance.colon))];
+  })], 2) : _vm._e(), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-content'], style: _vm.contentStyles }, [_vm._t("default"), _vm._v(" "), _c('transition', { attrs: { "name": "fade" } }, [_vm.validateState === 'error' && _vm.showMessage && _vm.FormInstance.showMessage ? _c('div', { class: [_vm.prefixCls + '-error-tip'] }, [_vm._v(_vm._s(_vm.validateMessage))]) : _vm._e()])], 2)]);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -38416,7 +38478,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.wrapClasses }, [!_vm.controlsOutside ? _c('div', { class: _vm.handlerClasses }, [_c('a', { class: _vm.upClasses, on: { "click": _vm.up } }, [_c('span', { class: _vm.innerUpClasses, on: { "click": _vm.preventDefault } })]), _vm._v(" "), _c('a', { class: _vm.downClasses, on: { "click": _vm.down } }, [_c('span', { class: _vm.innerDownClasses, on: { "click": _vm.preventDefault } })])]) : _vm._e(), _vm._v(" "), _vm.controlsOutside ? _c('div', { staticClass: "ivu-input-number-controls-outside-btn ivu-input-number-controls-outside-down", class: { 'ivu-input-number-controls-outside-btn-disabled': _vm.downDisabled }, on: { "click": _vm.down } }, [_c('i', { staticClass: "ivu-icon ivu-icon-ios-remove" })]) : _vm._e(), _vm._v(" "), _vm.controlsOutside ? _c('div', { staticClass: "ivu-input-number-controls-outside-btn ivu-input-number-controls-outside-up", class: { 'ivu-input-number-controls-outside-btn-disabled': _vm.upDisabled }, on: { "click": _vm.up } }, [_c('i', { staticClass: "ivu-icon ivu-icon-ios-add" })]) : _vm._e(), _vm._v(" "), _c('div', { class: _vm.inputWrapClasses }, [_c('input', { class: _vm.inputClasses, attrs: { "id": _vm.elementId, "disabled": _vm.itemDisabled, "autocomplete": "off", "spellcheck": "false", "autofocus": _vm.autofocus, "readonly": _vm.readonly || !_vm.editable, "name": _vm.name, "placeholder": _vm.placeholder }, domProps: { "value": _vm.formatterValue }, on: { "focus": _vm.focus, "blur": _vm.blur, "keydown": function keydown($event) {
-        $event.stopPropagation();return _vm.keyDown($event);
+        $event.stopPropagation();return _vm.keyDown.apply(null, arguments);
       }, "input": _vm.change, "mouseup": _vm.preventDefault, "change": _vm.change } })])]);
 };
 var staticRenderFns = [];
@@ -39181,7 +39243,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { ref: "outerWrapper", class: _vm.wrapperClasses }, [_vm.isHorizontal ? _c('div', { class: _vm.prefix + "-horizontal" }, [_c('div', { staticClass: "left-pane", class: _vm.paneClasses, style: { right: _vm.anotherOffset + "%" } }, [_vm._t("left")], 2), _vm._v(" "), _c('div', { class: _vm.prefix + "-trigger-con", style: { left: _vm.offset + "%" }, on: { "mousedown": _vm.handleMousedown } }, [_vm._t("trigger", [_c('trigger', { attrs: { "mode": "vertical" } })])], 2), _vm._v(" "), _c('div', { staticClass: "right-pane", class: _vm.paneClasses, style: { left: _vm.offset + "%" } }, [_vm._t("right")], 2)]) : _c('div', { class: _vm.prefix + "-vertical" }, [_c('div', { staticClass: "top-pane", class: _vm.paneClasses, style: { bottom: _vm.anotherOffset + "%" } }, [_vm._t("top")], 2), _vm._v(" "), _c('div', { class: _vm.prefix + "-trigger-con", style: { top: _vm.offset + "%" }, on: { "mousedown": _vm.handleMousedown } }, [_vm._t("trigger", [_c('trigger', { attrs: { "mode": "horizontal" } })])], 2), _vm._v(" "), _c('div', { staticClass: "bottom-pane", class: _vm.paneClasses, style: { top: _vm.offset + "%" } }, [_vm._t("bottom")], 2)])]);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { ref: "outerWrapper", class: _vm.wrapperClasses }, [_vm.isHorizontal ? _c('div', { class: _vm.prefix + "-horizontal" }, [_c('div', { staticClass: "left-pane", class: _vm.paneClasses, style: { right: _vm.anotherOffset + "%" } }, [_vm._t("left")], 2), _vm._v(" "), _c('div', { class: _vm.prefix + "-trigger-con", style: { left: _vm.offset + "%" }, on: { "mousedown": _vm.handleMousedown } }, [_vm._t("trigger", function () {
+    return [_c('trigger', { attrs: { "mode": "vertical" } })];
+  })], 2), _vm._v(" "), _c('div', { staticClass: "right-pane", class: _vm.paneClasses, style: { left: _vm.offset + "%" } }, [_vm._t("right")], 2)]) : _c('div', { class: _vm.prefix + "-vertical" }, [_c('div', { staticClass: "top-pane", class: _vm.paneClasses, style: { bottom: _vm.anotherOffset + "%" } }, [_vm._t("top")], 2), _vm._v(" "), _c('div', { class: _vm.prefix + "-trigger-con", style: { top: _vm.offset + "%" }, on: { "mousedown": _vm.handleMousedown } }, [_vm._t("trigger", function () {
+    return [_c('trigger', { attrs: { "mode": "horizontal" } })];
+  })], 2), _vm._v(" "), _c('div', { staticClass: "bottom-pane", class: _vm.paneClasses, style: { top: _vm.offset + "%" } }, [_vm._t("bottom")], 2)])]);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -39294,7 +39360,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.wrapClasses, style: _vm.wrapStyles }, [_c('span', { directives: [{ name: "show", rawName: "v-show", value: _vm.showZeroTrigger, expression: "showZeroTrigger" }], class: _vm.zeroWidthTriggerClasses, on: { "click": _vm.toggleCollapse } }, [_c('i', { staticClass: "ivu-icon ivu-icon-ios-menu" })]), _vm._v(" "), _c('div', { class: _vm.childClasses }, [_vm._t("default")], 2), _vm._v(" "), _vm._t("trigger", [_c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.showBottomTrigger, expression: "showBottomTrigger" }], class: _vm.triggerClasses, style: { width: _vm.siderWidth + 'px' }, on: { "click": _vm.toggleCollapse } }, [_c('i', { class: _vm.triggerIconClasses })])])], 2);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.wrapClasses, style: _vm.wrapStyles }, [_c('span', { directives: [{ name: "show", rawName: "v-show", value: _vm.showZeroTrigger, expression: "showZeroTrigger" }], class: _vm.zeroWidthTriggerClasses, on: { "click": _vm.toggleCollapse } }, [_c('i', { staticClass: "ivu-icon ivu-icon-ios-menu" })]), _vm._v(" "), _c('div', { class: _vm.childClasses }, [_vm._t("default")], 2), _vm._v(" "), _vm._t("trigger", function () {
+    return [_c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.showBottomTrigger, expression: "showBottomTrigger" }], class: _vm.triggerClasses, style: { width: _vm.siderWidth + 'px' }, on: { "click": _vm.toggleCollapse } }, [_c('i', { class: _vm.triggerIconClasses })])];
+  })], 2);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -39380,7 +39448,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.classes }, [_vm.header || _vm.$slots.header ? _c('div', { staticClass: "ivu-list-header" }, [_vm._t("header", [_vm._v(_vm._s(_vm.header))])], 2) : _vm._e(), _vm._v(" "), _c('div', { staticClass: "ivu-list-container" }, [_c('ul', { staticClass: "ivu-list-items" }, [_vm._t("default")], 2)]), _vm._v(" "), _vm.loading ? _c('Spin', { attrs: { "fix": "", "size": "large" } }, [_vm._t("spin")], 2) : _vm._e(), _vm._v(" "), _vm.footer || _vm.$slots.footer ? _c('div', { staticClass: "ivu-list-footer" }, [_vm._t("footer", [_vm._v(_vm._s(_vm.footer))])], 2) : _vm._e()], 1);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.classes }, [_vm.header || _vm.$slots.header ? _c('div', { staticClass: "ivu-list-header" }, [_vm._t("header", function () {
+    return [_vm._v(_vm._s(_vm.header))];
+  })], 2) : _vm._e(), _vm._v(" "), _c('div', { staticClass: "ivu-list-container" }, [_c('ul', { staticClass: "ivu-list-items" }, [_vm._t("default")], 2)]), _vm._v(" "), _vm.loading ? _c('Spin', { attrs: { "fix": "", "size": "large" } }, [_vm._t("spin")], 2) : _vm._e(), _vm._v(" "), _vm.footer || _vm.$slots.footer ? _c('div', { staticClass: "ivu-list-footer" }, [_vm._t("footer", function () {
+    return [_vm._v(_vm._s(_vm.footer))];
+  })], 2) : _vm._e()], 1);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -39492,7 +39564,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "ivu-list-item-meta" }, [_vm.avatar || _vm.$slots.avatar ? _c('div', { staticClass: "ivu-list-item-meta-avatar" }, [_vm._t("avatar", [_c('Avatar', { attrs: { "src": _vm.avatar } })])], 2) : _vm._e(), _vm._v(" "), _c('div', { staticClass: "ivu-list-item-meta-content" }, [_vm.title || _vm.$slots.title ? _c('div', { staticClass: "ivu-list-item-meta-title" }, [_vm._t("title", [_vm._v(_vm._s(_vm.title))])], 2) : _vm._e(), _vm._v(" "), _vm.description || _vm.$slots.description ? _c('div', { staticClass: "ivu-list-item-meta-description" }, [_vm._t("description", [_vm._v(_vm._s(_vm.description))])], 2) : _vm._e()])]);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "ivu-list-item-meta" }, [_vm.avatar || _vm.$slots.avatar ? _c('div', { staticClass: "ivu-list-item-meta-avatar" }, [_vm._t("avatar", function () {
+    return [_c('Avatar', { attrs: { "src": _vm.avatar } })];
+  })], 2) : _vm._e(), _vm._v(" "), _c('div', { staticClass: "ivu-list-item-meta-content" }, [_vm.title || _vm.$slots.title ? _c('div', { staticClass: "ivu-list-item-meta-title" }, [_vm._t("title", function () {
+    return [_vm._v(_vm._s(_vm.title))];
+  })], 2) : _vm._e(), _vm._v(" "), _vm.description || _vm.$slots.description ? _c('div', { staticClass: "ivu-list-item-meta-description" }, [_vm._t("description", function () {
+    return [_vm._v(_vm._s(_vm.description))];
+  })], 2) : _vm._e()])]);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -39975,7 +40053,7 @@ var render = function render() {
           return null;
         }return _vm.handleClickItem($event, true);
       }] } }, [_vm._t("default")], 2) : _c('li', { class: _vm.classes, style: _vm.itemStyle, on: { "click": function click($event) {
-        $event.stopPropagation();return _vm.handleClickItem($event);
+        $event.stopPropagation();return _vm.handleClickItem.apply(null, arguments);
       } } }, [_vm._t("default")], 2);
 };
 var staticRenderFns = [];
@@ -40033,7 +40111,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('li', { class: _vm.classes, on: { "mouseenter": _vm.handleMouseenter, "mouseleave": _vm.handleMouseleave } }, [_c('div', { ref: "reference", class: [_vm.prefixCls + '-submenu-title'], style: _vm.titleStyle, on: { "click": function click($event) {
-        $event.stopPropagation();return _vm.handleClick($event);
+        $event.stopPropagation();return _vm.handleClick.apply(null, arguments);
       } } }, [_vm._t("title"), _vm._v(" "), _c('Icon', { class: [_vm.prefixCls + '-submenu-title-icon'], attrs: { "type": _vm.arrowType, "custom": _vm.customArrowType, "size": _vm.arrowSize } })], 2), _vm._v(" "), _vm.mode === 'vertical' ? _c('collapse-transition', [_c('ul', { directives: [{ name: "show", rawName: "v-show", value: _vm.opened, expression: "opened" }], class: [_vm.prefixCls] }, [_vm._t("default")], 2)]) : _c('transition', { attrs: { "name": "slide-up" } }, [_c('Drop', { directives: [{ name: "show", rawName: "v-show", value: _vm.opened, expression: "opened" }], ref: "drop", style: _vm.dropStyle, attrs: { "placement": "bottom" } }, [_c('ul', { class: [_vm.prefixCls + '-drop-list'] }, [_vm._t("default")], 2)])], 1)], 1);
 };
 var staticRenderFns = [];
@@ -40726,11 +40804,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { directives: [{ name: "transfer-dom", rawName: "v-transfer-dom" }], attrs: { "data-transfer": _vm.transfer } }, [_c('transition', { attrs: { "name": _vm.transitionNames[1] } }, [_vm.showMask ? _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }], class: _vm.maskClasses, style: _vm.wrapStyles, on: { "click": _vm.handleMask } }) : _vm._e()]), _vm._v(" "), _c('div', { class: _vm.wrapClasses, style: _vm.wrapStyles, on: { "click": _vm.handleWrapClick } }, [_c('transition', { attrs: { "name": _vm.transitionNames[0] }, on: { "after-leave": _vm.animationFinish } }, [_c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }], class: _vm.classes, style: _vm.mainStyles, on: { "mousedown": _vm.handleMousedown } }, [_c('div', { ref: "content", class: _vm.contentClasses, style: _vm.contentStyles, on: { "click": _vm.handleClickModal } }, [_vm.closable ? _c('a', { class: [_vm.prefixCls + '-close'], on: { "click": _vm.close } }, [_vm._t("close", [_c('Icon', { attrs: { "type": "ios-close" } })])], 2) : _vm._e(), _vm._v(" "), _vm.showHead ? _c('div', { class: [_vm.prefixCls + '-header'], on: { "mousedown": _vm.handleMoveStart } }, [_vm._t("header", [_c('div', { class: [_vm.prefixCls + '-header-inner'] }, [_vm._v(_vm._s(_vm.title))])])], 2) : _vm._e(), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-body'] }, [_vm._t("default")], 2), _vm._v(" "), !_vm.footerHide ? _c('div', { class: [_vm.prefixCls + '-footer'] }, [_vm._t("footer", [_c('i-button', { attrs: { "type": "text" }, nativeOn: { "click": function click($event) {
-        return _vm.cancel($event);
-      } } }, [_vm._v(_vm._s(_vm.localeCancelText))]), _vm._v(" "), _c('i-button', { attrs: { "type": "primary", "loading": _vm.buttonLoading }, nativeOn: { "click": function click($event) {
-        return _vm.ok($event);
-      } } }, [_vm._v(_vm._s(_vm.localeOkText))])])], 2) : _vm._e()])])])], 1)], 1);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { directives: [{ name: "transfer-dom", rawName: "v-transfer-dom" }], attrs: { "data-transfer": _vm.transfer } }, [_c('transition', { attrs: { "name": _vm.transitionNames[1] } }, [_vm.showMask ? _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }], class: _vm.maskClasses, style: _vm.wrapStyles, on: { "click": _vm.handleMask } }) : _vm._e()]), _vm._v(" "), _c('div', { class: _vm.wrapClasses, style: _vm.wrapStyles, on: { "click": _vm.handleWrapClick } }, [_c('transition', { attrs: { "name": _vm.transitionNames[0] }, on: { "after-leave": _vm.animationFinish } }, [_c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }], class: _vm.classes, style: _vm.mainStyles, on: { "mousedown": _vm.handleMousedown } }, [_c('div', { ref: "content", class: _vm.contentClasses, style: _vm.contentStyles, on: { "click": _vm.handleClickModal } }, [_vm.closable ? _c('a', { class: [_vm.prefixCls + '-close'], on: { "click": _vm.close } }, [_vm._t("close", function () {
+    return [_c('Icon', { attrs: { "type": "ios-close" } })];
+  })], 2) : _vm._e(), _vm._v(" "), _vm.showHead ? _c('div', { class: [_vm.prefixCls + '-header'], on: { "mousedown": _vm.handleMoveStart } }, [_vm._t("header", function () {
+    return [_c('div', { class: [_vm.prefixCls + '-header-inner'] }, [_vm._v(_vm._s(_vm.title))])];
+  })], 2) : _vm._e(), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-body'] }, [_vm._t("default")], 2), _vm._v(" "), !_vm.footerHide ? _c('div', { class: [_vm.prefixCls + '-footer'] }, [_vm._t("footer", function () {
+    return [_c('i-button', { attrs: { "type": "text" }, nativeOn: { "click": function click($event) {
+          return _vm.cancel.apply(null, arguments);
+        } } }, [_vm._v(_vm._s(_vm.localeCancelText))]), _vm._v(" "), _c('i-button', { attrs: { "type": "primary", "loading": _vm.buttonLoading }, nativeOn: { "click": function click($event) {
+          return _vm.ok.apply(null, arguments);
+        } } }, [_vm._v(_vm._s(_vm.localeOkText))])];
+  })], 2) : _vm._e()])])])], 1)], 1);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -40980,7 +41064,7 @@ var render = function render() {
   }), 1)], 1) : _vm._e(), _vm._v(" "), _vm.showElevator ? _c('div', { class: _vm.ElevatorClasses }, [_vm._v("\n        " + _vm._s(_vm.t('i.page.goto')) + "\n        "), _c('input', { attrs: { "type": "text", "autocomplete": "off", "spellcheck": "false", "disabled": _vm.disabled }, domProps: { "value": _vm._current }, on: { "keyup": function keyup($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) {
           return null;
-        }return _vm.changePage($event);
+        }return _vm.changePage.apply(null, arguments);
       } } }), _vm._v("\n        " + _vm._s(_vm.t('i.page.p')) + "\n    ")]) : _vm._e()]) : _vm._e();
 };
 var staticRenderFns = [];
@@ -40998,7 +41082,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _vm.simple ? _c('ul', { class: _vm.simpleWrapClasses, style: _vm.styles }, [_c('li', { class: _vm.prevClasses, attrs: { "title": _vm.t('i.page.prev') }, on: { "click": _vm.prev } }, [_vm._m(0)]), _vm._v(" "), _c('div', { class: _vm.simplePagerClasses, attrs: { "title": _vm.currentPage + '/' + _vm.allPages } }, [_c('input', { attrs: { "type": "text", "autocomplete": "off", "spellcheck": "false", "disabled": _vm.disabled }, domProps: { "value": _vm.currentPage }, on: { "keydown": _vm.keyDown, "keyup": _vm.keyUp, "change": _vm.keyUp } }), _vm._v(" "), _c('span', [_vm._v("/")]), _vm._v("\n        " + _vm._s(_vm.allPages) + "\n    ")]), _vm._v(" "), _c('li', { class: _vm.nextClasses, attrs: { "title": _vm.t('i.page.next') }, on: { "click": _vm.next } }, [_vm._m(1)])]) : _c('ul', { class: _vm.wrapClasses, style: _vm.styles }, [_vm.showTotal ? _c('span', { class: [_vm.prefixCls + '-total'] }, [_vm._t("default", [_vm._v(_vm._s(_vm.t('i.page.total')) + " " + _vm._s(_vm.total) + " "), _vm.total <= 1 ? [_vm._v(_vm._s(_vm.t('i.page.item')))] : [_vm._v(_vm._s(_vm.t('i.page.items')))]])], 2) : _vm._e(), _vm._v(" "), _c('li', { class: _vm.prevClasses, attrs: { "title": _vm.t('i.page.prev') }, on: { "click": _vm.prev } }, [_c('a', [_vm.prevText !== '' ? [_vm._v(_vm._s(_vm.prevText))] : _c('i', { staticClass: "ivu-icon ivu-icon-ios-arrow-back" })], 2)]), _vm._v(" "), _c('li', { class: _vm.firstPageClasses, attrs: { "title": "1" }, on: { "click": function click($event) {
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _vm.simple ? _c('ul', { class: _vm.simpleWrapClasses, style: _vm.styles }, [_c('li', { class: _vm.prevClasses, attrs: { "title": _vm.t('i.page.prev') }, on: { "click": _vm.prev } }, [_vm._m(0)]), _vm._v(" "), _c('div', { class: _vm.simplePagerClasses, attrs: { "title": _vm.currentPage + '/' + _vm.allPages } }, [_c('input', { attrs: { "type": "text", "autocomplete": "off", "spellcheck": "false", "disabled": _vm.disabled }, domProps: { "value": _vm.currentPage }, on: { "keydown": _vm.keyDown, "keyup": _vm.keyUp, "change": _vm.keyUp } }), _vm._v(" "), _c('span', [_vm._v("/")]), _vm._v("\n        " + _vm._s(_vm.allPages) + "\n    ")]), _vm._v(" "), _c('li', { class: _vm.nextClasses, attrs: { "title": _vm.t('i.page.next') }, on: { "click": _vm.next } }, [_vm._m(1)])]) : _c('ul', { class: _vm.wrapClasses, style: _vm.styles }, [_vm.showTotal ? _c('span', { class: [_vm.prefixCls + '-total'] }, [_vm._t("default", function () {
+    return [_vm._v(_vm._s(_vm.t('i.page.total')) + " " + _vm._s(_vm.total) + " "), _vm.total <= 1 ? [_vm._v(_vm._s(_vm.t('i.page.item')))] : [_vm._v(_vm._s(_vm.t('i.page.items')))]];
+  })], 2) : _vm._e(), _vm._v(" "), _c('li', { class: _vm.prevClasses, attrs: { "title": _vm.t('i.page.prev') }, on: { "click": _vm.prev } }, [_c('a', [_vm.prevText !== '' ? [_vm._v(_vm._s(_vm.prevText))] : _c('i', { staticClass: "ivu-icon ivu-icon-ios-arrow-back" })], 2)]), _vm._v(" "), _c('li', { class: _vm.firstPageClasses, attrs: { "title": "1" }, on: { "click": function click($event) {
         return _vm.changePage(1);
       } } }, [_c('a', [_vm._v("1")])]), _vm._v(" "), _vm.currentPage > 5 ? _c('li', { class: [_vm.prefixCls + '-item-jump-prev'], attrs: { "title": _vm.t('i.page.prev5') }, on: { "click": _vm.fastPrev } }, [_vm._m(2)]) : _vm._e(), _vm._v(" "), _vm.currentPage === 5 ? _c('li', { class: [_vm.prefixCls + '-item'], attrs: { "title": _vm.currentPage - 3 }, on: { "click": function click($event) {
         return _vm.changePage(_vm.currentPage - 3);
@@ -41062,11 +41148,17 @@ var render = function render() {
         return _vm.handleFocus(false);
       }, "mouseup": function mouseup($event) {
         return _vm.handleBlur(false);
-      } } }, [_vm._t("default")], 2), _vm._v(" "), _c('transition', { attrs: { "name": "fade" } }, [_c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }, { name: "transfer-dom", rawName: "v-transfer-dom" }], ref: "popper", class: _vm.popperClasses, style: _vm.styles, attrs: { "data-transfer": _vm.transfer }, on: { "click": _vm.handleTransferClick, "mouseenter": _vm.handleMouseenter, "mouseleave": _vm.handleMouseleave } }, [_c('div', { class: [_vm.prefixCls + '-content'] }, [_c('div', { class: [_vm.prefixCls + '-arrow'] }), _vm._v(" "), _vm.confirm ? _c('div', { class: [_vm.prefixCls + '-inner'] }, [_c('div', { class: [_vm.prefixCls + '-body'] }, [_c('i', { staticClass: "ivu-icon ivu-icon-ios-help-circle" }), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-body-message'] }, [_vm._t("title", [_vm._v(_vm._s(_vm.title))])], 2)]), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-footer'] }, [_c('i-button', { attrs: { "type": "text", "size": "small" }, nativeOn: { "click": function click($event) {
-        return _vm.cancel($event);
+      } } }, [_vm._t("default")], 2), _vm._v(" "), _c('transition', { attrs: { "name": "fade" } }, [_c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }, { name: "transfer-dom", rawName: "v-transfer-dom" }], ref: "popper", class: _vm.popperClasses, style: _vm.styles, attrs: { "data-transfer": _vm.transfer }, on: { "click": _vm.handleTransferClick, "mouseenter": _vm.handleMouseenter, "mouseleave": _vm.handleMouseleave } }, [_c('div', { class: [_vm.prefixCls + '-content'] }, [_c('div', { class: [_vm.prefixCls + '-arrow'] }), _vm._v(" "), _vm.confirm ? _c('div', { class: [_vm.prefixCls + '-inner'] }, [_c('div', { class: [_vm.prefixCls + '-body'] }, [_c('i', { staticClass: "ivu-icon ivu-icon-ios-help-circle" }), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-body-message'] }, [_vm._t("title", function () {
+    return [_vm._v(_vm._s(_vm.title))];
+  })], 2)]), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-footer'] }, [_c('i-button', { attrs: { "type": "text", "size": "small" }, nativeOn: { "click": function click($event) {
+        return _vm.cancel.apply(null, arguments);
       } } }, [_vm._v(_vm._s(_vm.localeCancelText))]), _vm._v(" "), _c('i-button', { attrs: { "type": "primary", "size": "small" }, nativeOn: { "click": function click($event) {
-        return _vm.ok($event);
-      } } }, [_vm._v(_vm._s(_vm.localeOkText))])], 1)]) : _vm._e(), _vm._v(" "), !_vm.confirm ? _c('div', { class: [_vm.prefixCls + '-inner'] }, [_vm.showTitle ? _c('div', { ref: "title", class: [_vm.prefixCls + '-title'], style: _vm.contentPaddingStyle }, [_vm._t("title", [_c('div', { class: [_vm.prefixCls + '-title-inner'] }, [_vm._v(_vm._s(_vm.title))])])], 2) : _vm._e(), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-body'], style: _vm.contentPaddingStyle }, [_c('div', { class: _vm.contentClasses }, [_vm._t("content", [_c('div', { class: [_vm.prefixCls + '-body-content-inner'] }, [_vm._v(_vm._s(_vm.content))])])], 2)])]) : _vm._e()])])])], 1);
+        return _vm.ok.apply(null, arguments);
+      } } }, [_vm._v(_vm._s(_vm.localeOkText))])], 1)]) : _vm._e(), _vm._v(" "), !_vm.confirm ? _c('div', { class: [_vm.prefixCls + '-inner'] }, [_vm.showTitle ? _c('div', { ref: "title", class: [_vm.prefixCls + '-title'], style: _vm.contentPaddingStyle }, [_vm._t("title", function () {
+    return [_c('div', { class: [_vm.prefixCls + '-title-inner'] }, [_vm._v(_vm._s(_vm.title))])];
+  })], 2) : _vm._e(), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-body'], style: _vm.contentPaddingStyle }, [_c('div', { class: _vm.contentClasses }, [_vm._t("content", function () {
+    return [_c('div', { class: [_vm.prefixCls + '-body-content-inner'] }, [_vm._v(_vm._s(_vm.content))])];
+  })], 2)])]) : _vm._e()])])])], 1);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -41102,7 +41194,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.wrapClasses }, [_c('div', { class: _vm.outerClasses }, [_c('div', { class: _vm.innerClasses }, [_c('div', { class: _vm.bgClasses, style: _vm.bgStyle }, [_vm.textInside ? _c('div', { staticClass: "ivu-progress-inner-text" }, [_vm._v(_vm._s(_vm.percent) + "%")]) : _vm._e()]), _c('div', { class: _vm.successBgClasses, style: _vm.successBgStyle })])]), _vm._v(" "), !_vm.hideInfo && !_vm.textInside ? _c('span', { class: _vm.textClasses }, [_vm._t("default", [_vm.isStatus ? _c('span', { class: _vm.textInnerClasses }, [_c('Icon', { attrs: { "type": _vm.statusIcon } })], 1) : _c('span', { class: _vm.textInnerClasses }, [_vm._v("\n                " + _vm._s(_vm.percent) + "%\n            ")])])], 2) : _vm._e()]);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.wrapClasses }, [_c('div', { class: _vm.outerClasses }, [_c('div', { class: _vm.innerClasses }, [_c('div', { class: _vm.bgClasses, style: _vm.bgStyle }, [_vm.textInside ? _c('div', { staticClass: "ivu-progress-inner-text" }, [_vm._v(_vm._s(_vm.percent) + "%")]) : _vm._e()]), _c('div', { class: _vm.successBgClasses, style: _vm.successBgStyle })])]), _vm._v(" "), !_vm.hideInfo && !_vm.textInside ? _c('span', { class: _vm.textClasses }, [_vm._t("default", function () {
+    return [_vm.isStatus ? _c('span', { class: _vm.textInnerClasses }, [_c('Icon', { attrs: { "type": _vm.statusIcon } })], 1) : _c('span', { class: _vm.textInnerClasses }, [_vm._v("\n                " + _vm._s(_vm.percent) + "%\n            ")])];
+  })], 2) : _vm._e()]);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -41182,7 +41276,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('label', { class: _vm.wrapClasses }, [_c('span', { class: _vm.radioClasses }, [_c('span', { class: _vm.innerClasses }), _vm._v(" "), _c('input', { class: _vm.inputClasses, attrs: { "type": "radio", "disabled": _vm.itemDisabled, "name": _vm.groupName }, domProps: { "checked": _vm.currentValue }, on: { "change": _vm.change, "focus": _vm.onFocus, "blur": _vm.onBlur } })]), _vm._t("default", [_vm._v(_vm._s(_vm.label))])], 2);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('label', { class: _vm.wrapClasses }, [_c('span', { class: _vm.radioClasses }, [_c('span', { class: _vm.innerClasses }), _vm._v(" "), _c('input', { class: _vm.inputClasses, attrs: { "type": "radio", "disabled": _vm.itemDisabled, "name": _vm.groupName }, domProps: { "checked": _vm.currentValue }, on: { "change": _vm.change, "focus": _vm.onFocus, "blur": _vm.onBlur } })]), _vm._t("default", function () {
+    return [_vm._v(_vm._s(_vm.label))];
+  })], 2);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -41319,7 +41415,9 @@ var render = function render() {
         }, "click": function click($event) {
           return _vm.handleClick(item);
         } } }, [!_vm.showCharacter ? [_c('span', { class: [_vm.prefixCls + '-star-content'], attrs: { "type": "half" } })] : [_c('span', { class: [_vm.prefixCls + '-star-first'], attrs: { "type": "half" } }, [_vm.character !== '' ? [_vm._v(_vm._s(_vm.character))] : _c('i', { class: _vm.iconClasses, attrs: { "type": "half" } })], 2), _vm._v(" "), _c('span', { class: [_vm.prefixCls + '-star-second'] }, [_vm.character !== '' ? [_vm._v(_vm._s(_vm.character))] : _c('i', { class: _vm.iconClasses })], 2)]], 2);
-  }), _vm._v(" "), _vm.showText ? _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.currentValue > 0, expression: "currentValue > 0" }], class: [_vm.prefixCls + '-text'] }, [_vm._t("default", [_c('span', [_vm._v(_vm._s(_vm.currentValue))]), _vm._v(" "), _vm.currentValue <= 1 ? _c('span', [_vm._v(_vm._s(_vm.t('i.rate.star')))]) : _c('span', [_vm._v(_vm._s(_vm.t('i.rate.stars')))])])], 2) : _vm._e()], 2);
+  }), _vm._v(" "), _vm.showText ? _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.currentValue > 0, expression: "currentValue > 0" }], class: [_vm.prefixCls + '-text'] }, [_vm._t("default", function () {
+    return [_c('span', [_vm._v(_vm._s(_vm.currentValue))]), _vm._v(" "), _vm.currentValue <= 1 ? _c('span', [_vm._v(_vm._s(_vm.t('i.rate.star')))]) : _c('span', [_vm._v(_vm._s(_vm.t('i.rate.stars')))])];
+  })], 2) : _vm._e()], 2);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -41413,7 +41511,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: [_vm.prefixCls], on: { "mouseenter": _vm.handleShowPopper, "mouseleave": _vm.handleClosePopper } }, [_c('div', { ref: "reference", class: [_vm.prefixCls + '-rel'] }, [_vm._t("default")], 2), _vm._v(" "), _c('transition', { attrs: { "name": "fade" } }, [_c('div', { directives: [{ name: "show", rawName: "v-show", value: !_vm.disabled && (_vm.visible || _vm.always), expression: "!disabled && (visible || always)" }, { name: "transfer-dom", rawName: "v-transfer-dom" }], ref: "popper", class: _vm.dropdownCls, style: _vm.dropStyles, attrs: { "data-transfer": _vm.transfer }, on: { "mouseenter": _vm.handleShowPopper, "mouseleave": _vm.handleClosePopper } }, [_c('div', { class: [_vm.prefixCls + '-content'] }, [_c('div', { class: [_vm.prefixCls + '-arrow'] }), _vm._v(" "), _c('div', { class: _vm.innerClasses, style: _vm.innerStyles }, [_vm._t("content", [_vm._v(_vm._s(_vm.content))])], 2)])])])], 1);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: [_vm.prefixCls], on: { "mouseenter": _vm.handleShowPopper, "mouseleave": _vm.handleClosePopper } }, [_c('div', { ref: "reference", class: [_vm.prefixCls + '-rel'] }, [_vm._t("default")], 2), _vm._v(" "), _c('transition', { attrs: { "name": "fade" } }, [_c('div', { directives: [{ name: "show", rawName: "v-show", value: !_vm.disabled && (_vm.visible || _vm.always), expression: "!disabled && (visible || always)" }, { name: "transfer-dom", rawName: "v-transfer-dom" }], ref: "popper", class: _vm.dropdownCls, style: _vm.dropStyles, attrs: { "data-transfer": _vm.transfer }, on: { "mouseenter": _vm.handleShowPopper, "mouseleave": _vm.handleClosePopper } }, [_c('div', { class: [_vm.prefixCls + '-content'] }, [_c('div', { class: [_vm.prefixCls + '-arrow'] }), _vm._v(" "), _c('div', { class: _vm.innerClasses, style: _vm.innerStyles }, [_vm._t("content", function () {
+    return [_vm._v(_vm._s(_vm.content))];
+  })], 2)])])])], 1);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -42030,7 +42130,12 @@ module.exports = function(options) {
                         //So if it is not present, poll it with an timeout until it is present.
                         //TODO: Could maybe be handled better with object.onreadystatechange or similar.
                         if(!element.contentDocument) {
-                            setTimeout(function checkForObjectDocument() {
+                            var state = getState(element);
+                            if (state.checkForObjectDocumentTimeoutId) {
+                                window.clearTimeout(state.checkForObjectDocumentTimeoutId);
+                            }
+                            state.checkForObjectDocumentTimeoutId = setTimeout(function checkForObjectDocument() {
+                                state.checkForObjectDocumentTimeoutId = 0;
                                 getDocument(element, callback);
                             }, 100);
 
@@ -42063,6 +42168,7 @@ module.exports = function(options) {
                 object.style.cssText = OBJECT_STYLE;
                 object.tabIndex = -1;
                 object.type = "text/html";
+                object.setAttribute("aria-hidden", "true");
                 object.onload = onObjectLoad;
 
                 //Safari: This must occur before adding the object to the DOM.
@@ -42128,6 +42234,11 @@ module.exports = function(options) {
         } else {
             element.removeChild(object);
         }
+
+        if (getState(element).checkForObjectDocumentTimeoutId) {
+            window.clearTimeout(getState(element).checkForObjectDocumentTimeoutId);
+        }
+
         delete getState(element).object;
     }
 
@@ -42319,7 +42430,8 @@ module.exports = function(options) {
 
         function isDetached(element) {
             function isInDocument(element) {
-                return element === element.ownerDocument.body || element.ownerDocument.body.contains(element);
+                var isInShadowRoot = element.getRootNode && element.getRootNode().contains(element);
+                return element === element.ownerDocument.body || element.ownerDocument.body.contains(element) || isInShadowRoot;
             }
 
             if (!isInDocument(element)) {
@@ -42551,11 +42663,21 @@ module.exports = function(options) {
             rootContainer.appendChild(containerContainer);
 
             function onExpandScroll() {
-                getState(element).onExpand && getState(element).onExpand();
+                var state = getState(element);
+                if (state && state.onExpand) {
+                    state.onExpand();
+                } else {
+                    debug("Aborting expand scroll handler: element has been uninstalled");
+                }
             }
 
             function onShrinkScroll() {
-                getState(element).onShrink && getState(element).onShrink();
+                var state = getState(element);
+                if (state && state.onShrink) {
+                    state.onShrink();
+                } else {
+                    debug("Aborting shrink scroll handler: element has been uninstalled");
+                }
             }
 
             addEvent(expand, "scroll", onExpandScroll);
@@ -42821,26 +42943,26 @@ var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.classes }, [!_vm.range && _vm.showInput ? _c('Input-number', { attrs: { "min": _vm.min, "size": _vm.inputSize, "max": _vm.max, "step": _vm.step, "value": _vm.exportValue[0], "disabled": _vm.itemDisabled, "active-change": _vm.activeChange }, on: { "on-change": _vm.handleInputChange } }) : _vm._e(), _vm._v(" "), _c('div', { ref: "slider", class: [_vm.prefixCls + '-wrap'], on: { "click": function click($event) {
         if ($event.target !== $event.currentTarget) {
           return null;
-        }return _vm.sliderClick($event);
+        }return _vm.sliderClick.apply(null, arguments);
       } } }, [_c('input', { attrs: { "type": "hidden", "name": _vm.name }, domProps: { "value": _vm.exportValue } }), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-bar'], style: _vm.barStyle, on: { "click": function click($event) {
         if ($event.target !== $event.currentTarget) {
           return null;
-        }return _vm.sliderClick($event);
+        }return _vm.sliderClick.apply(null, arguments);
       } } }), _vm._v(" "), _vm.showStops ? _vm._l(_vm.stops, function (item) {
     return _c('div', { class: [_vm.prefixCls + '-stop'], style: { 'left': item + '%' }, on: { "click": function click($event) {
           if ($event.target !== $event.currentTarget) {
             return null;
-          }return _vm.sliderClick($event);
+          }return _vm.sliderClick.apply(null, arguments);
         } } });
   }) : _vm._e(), _vm._v(" "), _vm.markList.length > 0 ? [_vm._l(_vm.markList, function (item, key) {
     return _c('div', { key: key, class: [_vm.prefixCls + '-stop'], style: { 'left': item.position + '%' }, on: { "click": function click($event) {
           if ($event.target !== $event.currentTarget) {
             return null;
-          }return _vm.sliderClick($event);
+          }return _vm.sliderClick.apply(null, arguments);
         } } });
   }), _vm._v(" "), _c('div', { staticClass: "ivu-slider-marks" }, _vm._l(_vm.markList, function (item, key) {
     return _c('SliderMarker', { key: key, style: { 'left': item.position + '%' }, attrs: { "mark": item.mark }, nativeOn: { "click": function click($event) {
-          return _vm.sliderClick($event);
+          return _vm.sliderClick.apply(null, arguments);
         } } });
   }), 1)] : _vm._e(), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-button-wrap'], style: { left: _vm.minPosition + '%' }, on: { "touchstart": function touchstart($event) {
         return _vm.onPointerDown($event, 'min');
@@ -43193,7 +43315,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.wrapClasses }, [_c('div', { class: [_vm.prefixCls + '-tail'] }, [_c('i')]), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-head'] }, [_c('div', { class: [_vm.prefixCls + '-head-inner'] }, [!_vm.icon && !_vm.$slots.icon && _vm.currentStatus !== 'finish' && _vm.currentStatus !== 'error' ? _c('span', [_vm._v(_vm._s(_vm.stepNumber))]) : _vm.$slots.icon ? _c('span', { staticClass: "ivu-steps-icon" }, [_vm._t("icon")], 2) : _c('span', { class: _vm.iconClasses })])]), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-main'] }, [_c('div', { class: [_vm.prefixCls + '-title'] }, [_vm._t("title", [_vm._v(_vm._s(_vm.title))])], 2), _vm._v(" "), _vm.content || _vm.$slots.content ? _c('div', { class: [_vm.prefixCls + '-content'] }, [_vm._t("content", [_vm._v(_vm._s(_vm.content))])], 2) : _vm._e()])]);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.wrapClasses }, [_c('div', { class: [_vm.prefixCls + '-tail'] }, [_c('i')]), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-head'] }, [_c('div', { class: [_vm.prefixCls + '-head-inner'] }, [!_vm.icon && !_vm.$slots.icon && _vm.currentStatus !== 'finish' && _vm.currentStatus !== 'error' ? _c('span', [_vm._v(_vm._s(_vm.stepNumber))]) : _vm.$slots.icon ? _c('span', { staticClass: "ivu-steps-icon" }, [_vm._t("icon")], 2) : _c('span', { class: _vm.iconClasses })])]), _vm._v(" "), _c('div', { class: [_vm.prefixCls + '-main'] }, [_c('div', { class: [_vm.prefixCls + '-title'] }, [_vm._t("title", function () {
+    return [_vm._v(_vm._s(_vm.title))];
+  })], 2), _vm._v(" "), _vm.content || _vm.$slots.content ? _c('div', { class: [_vm.prefixCls + '-content'] }, [_vm._t("content", function () {
+    return [_vm._v(_vm._s(_vm.content))];
+  })], 2) : _vm._e()])]);
 };
 var staticRenderFns = [];
 exports.render = render;
@@ -43271,7 +43397,7 @@ var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('span', { class: _vm.wrapClasses, style: _vm.wrapStyles, attrs: { "tabindex": "0" }, on: { "click": _vm.toggle, "keydown": function keydown($event) {
         if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "space", 32, $event.key, [" ", "Spacebar"])) {
           return null;
-        }return _vm.toggle($event);
+        }return _vm.toggle.apply(null, arguments);
       } } }, [_c('input', { attrs: { "type": "hidden", "name": _vm.name }, domProps: { "value": _vm.currentValue } }), _vm._v(" "), _c('span', { class: _vm.innerClasses }, [_vm.currentValue === _vm.trueValue ? _vm._t("open") : _vm._e(), _vm._v(" "), _vm.currentValue === _vm.falseValue ? _vm._t("close") : _vm._e()], 2)]);
 };
 var staticRenderFns = [];
@@ -44113,9 +44239,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { ref: "cell", class: _vm.classes }, [_vm.renderType === 'index' ? [_c('span', [_vm._v(_vm._s(_vm.column.indexMethod ? _vm.column.indexMethod(_vm.row, _vm.naturalIndex) : _vm.naturalIndex + 1))])] : _vm._e(), _vm._v(" "), _vm.renderType === 'selection' ? [_c('Checkbox', { attrs: { "value": _vm.checked, "disabled": _vm.disabled }, on: { "on-change": _vm.toggleSelect }, nativeOn: { "click": function click($event) {
-        $event.stopPropagation();return _vm.handleClick($event);
+        $event.stopPropagation();return _vm.handleClick.apply(null, arguments);
       } } })] : _vm._e(), _vm._v(" "), _vm.showLevel ? _c('div', { staticClass: "ivu-table-cell-tree-level", style: _vm.treeLevelStyle }) : _vm._e(), _vm._v(" "), _vm.showChildren ? _c('div', { staticClass: "ivu-table-cell-tree", class: { 'ivu-table-cell-tree-loading': _vm.childrenLoading }, on: { "click": function click($event) {
-        $event.preventDefault();$event.stopPropagation();return _vm.handleToggleTree($event);
+        $event.preventDefault();$event.stopPropagation();return _vm.handleToggleTree.apply(null, arguments);
       } } }, [_vm.childrenLoading ? _c('Icon', { staticClass: "ivu-load-loop", attrs: { "type": "ios-loading" } }) : !_vm.childrenExpand ? _c('Icon', { attrs: { "type": "ios-add" } }) : _c('Icon', { attrs: { "type": "ios-remove" } })], 1) : _vm.showTreeNode ? _c('div', { staticClass: "ivu-table-cell-tree ivu-table-cell-tree-empty" }) : _vm._e(), _vm._v(" "), _vm.renderType === 'html' ? [_c('span', { domProps: { "innerHTML": _vm._s(_vm.row[_vm.column.key]) } })] : _vm._e(), _vm._v(" "), _vm.renderType === 'normal' ? [_vm.column.tooltip ? [_c('Tooltip', { staticClass: "ivu-table-cell-tooltip", attrs: { "transfer": "", "content": _vm.row[_vm.column.key], "theme": _vm.column.tooltipTheme ? _vm.column.tooltipTheme : _vm.tableRoot.tooltipTheme, "disabled": !_vm.showTooltip, "max-width": _vm.column.tooltipMaxWidth ? _vm.column.tooltipMaxWidth : _vm.tableRoot.tooltipMaxWidth } }, [_c('span', { ref: "content", staticClass: "ivu-table-cell-tooltip-content", on: { "mouseenter": _vm.handleTooltipIn } }, [_vm._v(_vm._s(_vm.row[_vm.column.key]))])])] : _c('span', [_vm._v(_vm._s(_vm.row[_vm.column.key]))])] : _vm._e(), _vm._v(" "), _vm.renderType === 'expand' && !_vm.row._disableExpand ? [_c('div', { class: _vm.expandCls, on: { "click": _vm.toggleExpand } }, [_c('Icon', { attrs: { "type": "ios-arrow-forward" } })], 1)] : _vm._e(), _vm._v(" "), _vm.renderType === 'render' ? _c('table-expand', { attrs: { "row": _vm.row, "column": _vm.column, "index": _vm.index, "render": _vm.column.render } }) : _vm._e(), _vm._v(" "), _vm.renderType === 'slot' ? _c('table-slot', { attrs: { "row": _vm.row, "column": _vm.column, "display": _vm.column.display || 'block', "index": _vm.index } }) : _vm._e()], 2);
 };
 var staticRenderFns = [];
@@ -44750,13 +44876,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _vm.fade ? _c('transition', { attrs: { "name": "fade" } }, [_c('div', { class: _vm.classes, style: _vm.wraperStyles, on: { "click": function click($event) {
-        $event.stopPropagation();return _vm.check($event);
+        $event.stopPropagation();return _vm.check.apply(null, arguments);
       } } }, [_vm.showDot ? _c('span', { class: _vm.dotClasses, style: _vm.bgColorStyle }) : _vm._e(), _vm._v(" "), _c('span', { class: _vm.textClasses, style: _vm.textColorStyle }, [_vm._t("default")], 2), _vm._v(" "), _vm.closable ? _c('Icon', { class: _vm.iconClass, attrs: { "color": _vm.lineColor, "type": "ios-close" }, nativeOn: { "click": function click($event) {
-        $event.stopPropagation();return _vm.close($event);
+        $event.stopPropagation();return _vm.close.apply(null, arguments);
       } } }) : _vm._e()], 1)]) : _c('div', { class: _vm.classes, style: _vm.wraperStyles, on: { "click": function click($event) {
-        $event.stopPropagation();return _vm.check($event);
+        $event.stopPropagation();return _vm.check.apply(null, arguments);
       } } }, [_vm.showDot ? _c('span', { class: _vm.dotClasses, style: _vm.bgColorStyle }) : _vm._e(), _vm._v(" "), _c('span', { class: _vm.textClasses, style: _vm.textColorStyle }, [_vm._t("default")], 2), _vm._v(" "), _vm.closable ? _c('Icon', { class: _vm.iconClass, attrs: { "color": _vm.lineColor, "type": "ios-close" }, nativeOn: { "click": function click($event) {
-        $event.stopPropagation();return _vm.close($event);
+        $event.stopPropagation();return _vm.close.apply(null, arguments);
       } } }) : _vm._e()], 1);
 };
 var staticRenderFns = [];
@@ -45385,13 +45511,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.prefixCls + '-operation' }, [_vm.reverseOperation ? [_c('i-button', { attrs: { "type": "primary", "size": "small", "disabled": !_vm.leftActive }, nativeOn: { "click": function click($event) {
-        return _vm.moveToRight($event);
+        return _vm.moveToRight.apply(null, arguments);
       } } }, [_c('span', [_vm._v(_vm._s(_vm.operations[1]))]), _vm._v(" "), _c('Icon', { attrs: { "type": "ios-arrow-forward" } })], 1), _vm._v(" "), _c('i-button', { attrs: { "type": "primary", "size": "small", "disabled": !_vm.rightActive }, nativeOn: { "click": function click($event) {
-        return _vm.moveToLeft($event);
+        return _vm.moveToLeft.apply(null, arguments);
       } } }, [_c('Icon', { attrs: { "type": "ios-arrow-back" } }), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.operations[0]))])], 1)] : [_c('i-button', { attrs: { "type": "primary", "size": "small", "disabled": !_vm.rightActive }, nativeOn: { "click": function click($event) {
-        return _vm.moveToLeft($event);
+        return _vm.moveToLeft.apply(null, arguments);
       } } }, [_c('Icon', { attrs: { "type": "ios-arrow-back" } }), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.operations[0]))])], 1), _vm._v(" "), _c('i-button', { attrs: { "type": "primary", "size": "small", "disabled": !_vm.leftActive }, nativeOn: { "click": function click($event) {
-        return _vm.moveToRight($event);
+        return _vm.moveToRight.apply(null, arguments);
       } } }, [_c('span', [_vm._v(_vm._s(_vm.operations[1]))]), _vm._v(" "), _c('Icon', { attrs: { "type": "ios-arrow-forward" } })], 1)]], 2);
 };
 var staticRenderFns = [];
@@ -45548,7 +45674,7 @@ var render = function render() {
       }, "selectstart": function selectstart($event) {
         $event.stopPropagation();return _vm.handlePreventSelect(_vm.data, $event);
       } } }, [_c('span', { class: _vm.arrowClasses, on: { "click": _vm.handleExpand } }, [_vm.showArrow ? _c('Icon', { attrs: { "type": _vm.arrowType, "custom": _vm.customArrowType, "size": _vm.arrowSize } }) : _vm._e(), _vm._v(" "), _vm.showLoading ? _c('Icon', { staticClass: "ivu-load-loop", attrs: { "type": "ios-loading" } }) : _vm._e()], 1), _vm._v(" "), _vm.showCheckbox ? _c('Checkbox', { attrs: { "value": _vm.data.checked, "indeterminate": _vm.data.indeterminate, "disabled": _vm.data.disabled || _vm.data.disableCheckbox }, nativeOn: { "click": function click($event) {
-        $event.preventDefault();return _vm.handleCheck($event);
+        $event.preventDefault();return _vm.handleCheck.apply(null, arguments);
       } } }) : _vm._e(), _vm._v(" "), _c('span', { class: _vm.titleClasses, on: { "click": _vm.handleClickNode } }, [_vm.data.render ? _c('Render', { attrs: { "render": _vm.data.render, "data": _vm.data, "node": _vm.node } }) : _vm.isParentRender ? _c('Render', { attrs: { "render": _vm.parentRender, "data": _vm.data, "node": _vm.node } }) : [_vm._v(_vm._s(_vm.data.title))]], 2), _vm._v(" "), _vm._l(_vm.children, function (item, i) {
     return _vm.data.expand ? _c('Tree-node', { key: i, attrs: { "appear": _vm.appearByClickArrow, "data": item, "multiple": _vm.multiple, "show-checkbox": _vm.showCheckbox, "children-key": _vm.childrenKey } }) : _vm._e();
   })], 2)])]);
@@ -45814,7 +45940,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: [_vm.prefixCls] }, [_c('div', { class: _vm.classes, on: { "click": _vm.handleClick, "drop": function drop($event) {
-        $event.preventDefault();return _vm.onDrop($event);
+        $event.preventDefault();return _vm.onDrop.apply(null, arguments);
       }, "paste": _vm.handlePaste, "dragover": function dragover($event) {
         $event.preventDefault();_vm.dragOver = true;
       }, "dragleave": function dragleave($event) {
