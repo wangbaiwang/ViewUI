@@ -28,6 +28,7 @@
             <slot name="input">
                 <input type="hidden" :name="name" :value="publicValue">
                 <select-head
+                    ref="selectHead"
                     :filterable="filterable"
                     :multiple="multiple"
                     :values="values"
@@ -804,7 +805,14 @@
                     // 单选（和多选，#926）时如果不在 nextTick 里执行，无法赋值
                     this.$nextTick(() => this.onOptionClick(option));
                 }
-            }
+            },
+            // 对外 API
+            focus () {
+                if (this.filterable) {
+                    this.$refs.selectHead.$refs.input.focus();
+                    this.toggleMenu();
+                }
+            },
         },
         watch: {
             value(value){
