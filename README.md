@@ -4,6 +4,7 @@
     </a>
 </p>
 
+<h1>!!!切记!!!  npm publish的时候 Node版本要是 11.x.x</h1>
 <h1>
 ViewUI
     <h3>A high quality UI Toolkit built on Vue.js.</h3>
