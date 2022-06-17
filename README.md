@@ -6,7 +6,11 @@
 
 <h1>!!!切记!!!  npm publish的时候 Node版本要是 11.x.x</h1>
 
-<h3>修改注册表为：npm config set registry https://registry.npmjs.org</h3>
+```
+修改注册表为：npm config set registry https://registry.npmjs.org
+发布之后改回：npm config set registry https://registry.npmmirror.com
+```
+
 <h1>
 ViewUI
     <h3>A high quality UI Toolkit built on Vue.js.</h3>
