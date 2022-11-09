@@ -277,7 +277,7 @@
             handleClose () {
                 this.visible = false;
                 this.$emit('input', false);
-                this.$emit('on-cancel');
+                this.$emit('on-close');
             },
             handleMask () {
                 if (this.maskClosable && this.showMask) {
@@ -297,7 +297,24 @@
                 this.isMouseTriggerIn = true;
             },
             cancel () {
-                this.close();
+                if (!this.beforeClose) {
+                    return this.handleCancel();
+                }
+
+                const before = this.beforeClose();
+
+                if (before && before.then) {
+                    before.then(() => {
+                        this.handleCancel();
+                    });
+                } else {
+                    this.handleCancel();
+                }
+            },
+            handleCancel () {
+                this.visible = false;
+                this.$emit('input', false);
+                this.$emit('on-cancel');
             },
             ok () {
                 if (this.loading) {

@@ -104,6 +104,10 @@ export declare class Modal extends Vue {
     /**
      * 开关变化时触发，返回当前的状态
      */
+    $emit(eventName: "on-close"): this;
+    /**
+     * 开关变化时触发，返回当前的状态
+     */
     $emit(eventName: "on-visible-change", visible: boolean): this;
     /**
      * slot插槽对象
@@ -212,6 +216,10 @@ export declare class ModalConfig {
      * 点击取消的回调，只在Modal.confirm()下有效
      */
     onCancel?: () => void;
+    /**
+     * 点击取消的回调，只在Modal.confirm()下有效
+     */
+    onClose?: () => void;
 }
 
 declare module "vue/types/vue" {
