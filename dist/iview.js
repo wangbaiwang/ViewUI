@@ -30902,7 +30902,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 var API = (0, _extends3.default)({
-    version: '1.0.2',
+    version: '1.0.5',
     locale: _index2.default.use,
     i18n: _index2.default.i18n,
     install: install,
@@ -40596,7 +40596,7 @@ _modal2.default.newInstance = function (properties) {
 
                         this.visible = status;
                     }.bind(this),
-                    'on-cancel': this.cancel
+                    'on-close': this.close
                 }
             }, [h('div', {
                 attrs: {
@@ -40632,6 +40632,13 @@ _modal2.default.newInstance = function (properties) {
             }
         },
         methods: {
+            close: function close() {
+                if (this.closing) return;
+                this.$children[0].visible = false;
+                this.buttonLoading = false;
+                this.onClose();
+                this.remove();
+            },
             cancel: function cancel() {
                 if (this.closing) return;
                 this.$children[0].visible = false;
@@ -40666,6 +40673,7 @@ _modal2.default.newInstance = function (properties) {
                 this.onRemove();
             },
             onOk: function onOk() {},
+            onClose: function onClose() {},
             onCancel: function onCancel() {},
             onRemove: function onRemove() {}
         }
@@ -40720,6 +40728,10 @@ _modal2.default.newInstance = function (properties) {
 
             if ('cancelText' in props) {
                 modal.$parent.cancelText = props.cancelText;
+            }
+
+            if ('onClose' in props) {
+                modal.$parent.onClose = props.onClose;
             }
 
             if ('onCancel' in props) {

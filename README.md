@@ -6,10 +6,17 @@
 
 <h1>!!!切记!!!  npm publish的时候 Node版本要是 11.x.x</h1>
 
+第一步
 ```
 修改注册表为：npm config set registry https://registry.npmjs.org
 发布之后改回：npm config set registry https://registry.npmmirror.com
 ```
+第二步
+```
+npm publish
+```
+第三步
+[同步淘宝镜像](https://npmmirror.com/package/wangbaiwang-view-design)
 
 <h1>
 ViewUI

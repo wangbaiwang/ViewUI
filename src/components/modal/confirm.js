@@ -109,7 +109,7 @@ Modal.newInstance = properties => {
                     input: (status) => {
                         this.visible = status;
                     },
-                    'on-cancel': this.cancel
+                    'on-close': this.close
                 }
             }, [
                 h('div', {
@@ -156,6 +156,13 @@ Modal.newInstance = properties => {
             }
         },
         methods: {
+            close () {
+                if (this.closing) return;
+                this.$children[0].visible = false;
+                this.buttonLoading = false;
+                this.onClose();
+                this.remove();
+            },
             cancel () {
                 if (this.closing) return;
                 this.$children[0].visible = false;
@@ -186,6 +193,7 @@ Modal.newInstance = properties => {
                 this.onRemove();
             },
             onOk () {},
+            onClose () {},
             onCancel () {},
             onRemove () {}
         }
@@ -240,6 +248,10 @@ Modal.newInstance = properties => {
 
             if ('cancelText' in props) {
                 modal.$parent.cancelText = props.cancelText;
+            }
+
+            if ('onClose' in props) {
+                modal.$parent.onClose = props.onClose;
             }
 
             if ('onCancel' in props) {
